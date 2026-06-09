@@ -28,8 +28,8 @@ export default function Hero() {
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-highlight rounded-full border-2 border-white group-hover:scale-110 transition-transform" />
           </div>
           <div className="flex flex-col">
-            <span className="text-[14px] md:text-[16px] font-bold text-brand-primary tracking-tight leading-none uppercase">TP Growth MKT</span>
-            <span className="text-[9px] md:text-[10px] text-brand-soft-text font-bold uppercase tracking-[0.2em] mt-1 md:mt-1.5 line-clamp-1">Marketing Advisor for SME</span>
+            <span className="text-[14px] md:text-[16px] font-bold text-brand-primary tracking-tight leading-none uppercase">ThanhPhu Growth</span>
+            <span className="text-[9px] md:text-[10px] text-brand-soft-text font-bold uppercase tracking-[0.2em] mt-1 md:mt-1.5 line-clamp-1">Growth through System</span>
           </div>
         </motion.div>
         
