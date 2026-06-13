@@ -13,17 +13,17 @@ export default function TPLogo({
   width,
   height,
 }: TPLogoProps) {
-  // Map kích thước tương thích chính xác với layout cũ của hệ thống
+  // Thay đổi tư duy: Khống chế chiều cao (h), để chiều rộng tự động co giãn (w-auto) theo tỉ lệ ảnh gốc
   const sizeMap = {
-    sm: { w: 'w-8', h: 'h-8' },
-    md: { w: 'w-10', h: 'h-10' },
-    lg: { w: 'w-14', h: 'h-14' },
-    xl: { w: 'w-20', h: 'h-20' },
-    custom: { w: '', h: '' },
+    sm: { h: 'h-6 md:h-7' },
+    md: { h: 'h-8 md:h-9' },    // Kích thước chuẩn cho Header
+    lg: { h: 'h-12 md:h-14' },
+    xl: { h: 'h-16 md:h-20' },
+    custom: { h: '' },
   };
 
   const dims = size === 'custom' ? { width, height } : {};
-  const sizeClasses = size !== 'custom' ? `${sizeMap[size].w} ${sizeMap[size].h}` : '';
+  const sizeClasses = size !== 'custom' ? `${sizeMap[size].h} w-auto` : 'w-auto';
 
   return (
     <img
