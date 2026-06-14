@@ -23,7 +23,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3"
         >
-         <div className="h-10 md:h-11 bg-white border border-brand-border rounded-[12px] flex items-center justify-center shadow-md relative group cursor-pointer hover:-translate-y-0.5 transition-all px-4 py-1.5 shrink-0">
+         <div className="h-12 md:h-14 bg-white border border-brand-border rounded-[12px] flex items-center justify-center shadow-md relative group cursor-pointer hover:-translate-y-0.5 transition-all px-4 py-1.5 shrink-0">
   <TPLogo size="custom" className="h-full w-auto object-contain" />
   <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-highlight rounded-full border-2 border-white group-hover:scale-110 transition-transform" />
 </div>
