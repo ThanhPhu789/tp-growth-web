@@ -27,7 +27,7 @@ export default function TPLogo({
 
   return (
     <img
-      src="src="https://pub-7e13bf90e3314fc284e5c20636c22021.r2.dev/assets/logo.png"
+      src="https://pub-7e13bf90e3314fc284e5c20636c22021.r2.dev/assets/logo.png"
       alt="ThanhPhu Growth Logo"
       className={`${sizeClasses} ${className} object-contain`}
       {...dims}
