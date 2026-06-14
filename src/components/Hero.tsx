@@ -23,10 +23,11 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3"
         >
-          <div className="w-10 h-10 md:w-11 md:h-11 bg-white border border-brand-border rounded-[12px] flex items-center justify-center shadow-md relative group cursor-pointer hover:-translate-y-0.5 transition-all p-1.5 shrink-0">
-            <TPLogo size="custom" className="w-full h-full" />
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-highlight rounded-full border-2 border-white group-hover:scale-110 transition-transform" />
-          </div>
+         <div className="w-10 h-10 md:w-11 md:h-11 bg-white border border-brand-border rounded-[12px] flex items-center justify-center shadow-md relative group cursor-pointer hover:-translate-y-0.5 transition-all p-1.5 shrink-0">
+    {/* Thêm object-contain vào đây thay vì w-full h-full */}
+    <TPLogo size="custom" className="w-full h-full object-contain" />
+    <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-highlight rounded-full border-2 border-white group-hover:scale-110 transition-transform" />
+</div>
           <div className="flex flex-col">
             <span className="text-[14px] md:text-[16px] font-bold text-brand-primary tracking-tight leading-none uppercase">ThanhPhu Growth</span>
             <span className="text-[9px] md:text-[10px] text-brand-soft-text font-bold uppercase tracking-[0.2em] mt-1 md:mt-1.5 line-clamp-1">Growth through System</span>
