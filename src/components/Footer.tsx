@@ -46,24 +46,40 @@ export default function Footer() {
               <div className="text-[18px] md:text-[20px] font-bold text-brand-primary tracking-tight">Growth Through System</div>
             </div>
             <p className="text-brand-secondary font-medium max-w-[440px] text-[14px] md:text-[15px] opacity-70 leading-relaxed">
-              Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến và minh bạch.
+              Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến, minh bạch & ra tiền.
             </p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-            {[
-              { icon: <MessageCircle className="w-5 h-5 text-[#0068FF]" />, label: 'Zalo' },
-              { icon: <Facebook className="w-5 h-5 text-[#1877F2]" />, label: 'Facebook' },
-              { icon: <Mail className="w-5 h-5 text-brand-accent" />, label: 'Email' },
-              { icon: <Phone className="w-5 h-5 text-green-500" />, label: '090 000 0000' }
-            ].map((link, i) => (
-              <a key={i} href="#" className="flex items-center gap-2 text-brand-primary font-bold text-[13px] md:text-[14px] hover:text-brand-accent transition-colors py-2 px-4 rounded-full hover:bg-brand-accent/5">
-                {link.icon}
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
+  {[
+    { 
+      icon: <MessageCircle className="w-5 h-5 text-[#0068FF]" />, 
+      label: 'Zalo', 
+      url: 'https://zalo.me/0766911958'
+    },
+    { 
+      icon: <Facebook className="w-5 h-5 text-[#1877F2]" />, 
+      label: 'Facebook', 
+      url: 'https://www.facebook.com/your.phanthanhphu' 
+    },
+    { 
+      icon: <Mail className="w-5 h-5 text-brand-accent" />, 
+      label: 'Email', 
+      url: 'mailto:phanthanhphu789@gmail.com' 
+    }
+  ].map((link, i) => (
+    <a 
+      key={i} 
+      href={link.url} 
+      target={link.url.startsWith('http') ? '_blank' : undefined}
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 text-brand-primary font-bold text-[13px] md:text-[14px] hover:text-brand-accent transition-colors py-2 px-4 rounded-full hover:bg-brand-accent/5"
+    >
+      {link.icon}
+      {link.label}
+    </a>
+  ))}
+</div>
 
         <div className="flex flex-col md:flex-row items-center justify-between py-10 gap-6">
           <div className="text-brand-soft-text text-[12px] md:text-[13px] font-medium opacity-60">© 2026 TP GROWTH MARKETING. Bản quyền thuộc về tác giả.</div>
