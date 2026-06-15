@@ -40,9 +40,9 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 pb-16 border-b border-brand-border text-center lg:text-left">
           <div className="flex flex-col items-center lg:items-start gap-4">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 bg-white border border-brand-border rounded-xl flex items-center justify-center shadow-md p-1.5 shrink-0">
-                <TPLogo size="custom" className="w-full h-full" />
-              </div>
+              <div className="h-12 md:h-14 bg-white border border-brand-border rounded-xl flex items-center justify-center shadow-md px-4 py-1 shrink-0">
+  <TPLogo size="custom" className="h-full w-auto object-contain" />
+</div>
               <div className="text-[18px] md:text-[20px] font-bold text-brand-primary tracking-tight">Phú – Marketing Advisor for SME</div>
             </div>
             <p className="text-brand-secondary font-medium max-w-[440px] text-[14px] md:text-[15px] opacity-70 leading-relaxed">
