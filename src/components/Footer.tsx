@@ -43,7 +43,7 @@ export default function Footer() {
               <div className="h-12 md:h-14 bg-white border border-brand-border rounded-xl flex items-center justify-center shadow-md px-4 py-1 shrink-0">
   <TPLogo size="custom" className="h-full w-auto object-contain" />
 </div>
-              <div className="text-[18px] md:text-[20px] font-bold text-brand-primary tracking-tight">Phú – Marketing Advisor for SME</div>
+              <div className="text-[18px] md:text-[20px] font-bold text-brand-primary tracking-tight">Growth Through System</div>
             </div>
             <p className="text-brand-secondary font-medium max-w-[440px] text-[14px] md:text-[15px] opacity-70 leading-relaxed">
               Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến và minh bạch.
