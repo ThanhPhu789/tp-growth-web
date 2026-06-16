@@ -37,39 +37,39 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-6">
-        {/* HÀNG TRÊN: Phân tách vùng bằng Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-brand-border items-center">
+        {/* LAYOUT MỚI: Cân bằng tỉ lệ 6/6 để đạt độ "Wow" */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 pb-16 border-b border-brand-border items-center">
           
-          {/* Cột trái (7/12): Logo & Slogan - Trọng tâm thương hiệu */}
-          <div className="lg:col-span-7 flex flex-col items-center lg:items-start gap-4 text-center lg:text-left">
-            <div className="h-12 md:h-14 bg-white border border-brand-border rounded-xl flex items-center justify-center shadow-md px-4 py-1 shrink-0">
-              <TPLogo size="custom" className="h-full w-auto object-contain" />
+          {/* CỘT TRÁI: Brand Identity (Hợp nhất Logo & Slogan) */}
+          <div className="flex items-start gap-5">
+            <div className="h-16 w-16 md:h-20 md:w-20 bg-white border border-brand-border rounded-2xl flex items-center justify-center shadow-md p-2 shrink-0">
+              <TPLogo size="custom" className="h-full w-full object-contain" />
             </div>
-            <div className="space-y-2">
-              <h3 className="text-[18px] md:text-[20px] font-black text-brand-primary tracking-tight uppercase">
+            <div className="flex flex-col justify-center h-16 md:h-20">
+              <h3 className="text-[18px] md:text-[20px] font-black text-brand-primary tracking-tight uppercase leading-tight">
                 Growth Through System
               </h3>
-              <p className="text-brand-secondary font-medium max-w-[440px] text-[14px] md:text-[15px] opacity-70 leading-relaxed mx-auto lg:mx-0">
-                Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến, minh bạch & ra tiền.
+              <p className="text-brand-secondary font-medium text-[14px] md:text-[15px] opacity-70 leading-relaxed mt-1">
+                Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến & minh bạch.
               </p>
             </div>
           </div>
 
-          {/* Cột phải (5/12): Vùng Liên Hệ (Đã được đóng khung) */}
-          <div className="lg:col-span-5 bg-slate-50 p-6 md:p-8 rounded-2xl border border-brand-border/50 flex flex-col items-center lg:items-center gap-4">
-            <h4 className="text-[13px] font-bold text-brand-primary uppercase tracking-[0.2em] opacity-60">Kết nối với Phú</h4>
-            <div className="flex flex-wrap justify-center gap-3">
+          {/* CỘT PHẢI: Contact (Tối giản hóa để không làm loãng thương hiệu) */}
+          <div className="flex flex-col items-center lg:items-end gap-3 w-full">
+            <span className="text-[12px] font-bold text-brand-primary uppercase tracking-[0.2em] opacity-60">Kết nối với Phú</span>
+            <div className="flex flex-wrap justify-center lg:justify-end gap-3 w-full">
               {[
-                { icon: <MessageCircle className="w-5 h-5 text-[#0068FF]" />, label: 'Zalo', url: 'https://zalo.me/0766911958' },
-                { icon: <Facebook className="w-5 h-5 text-[#1877F2]" />, label: 'Facebook', url: 'https://www.facebook.com/your.phanthanhphu' },
-                { icon: <Mail className="w-5 h-5 text-brand-accent" />, label: 'Email', url: 'mailto:phanthanhphu789@gmail.com' }
+                { icon: <MessageCircle className="w-4 h-4" />, label: 'Zalo', url: 'https://zalo.me/0766911958' },
+                { icon: <Facebook className="w-4 h-4" />, label: 'Facebook', url: 'https://www.facebook.com/your.phanthanhphu' },
+                { icon: <Mail className="w-4 h-4" />, label: 'Email', url: 'mailto:phanthanhphu789@gmail.com' }
               ].map((link, i) => (
                 <a 
                   key={i} 
                   href={link.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-brand-primary font-bold text-[14px] bg-white border border-brand-border shadow-sm hover:border-brand-accent hover:bg-brand-accent/5 transition-all py-2.5 px-5 rounded-full"
+                  className="flex items-center gap-2 text-brand-primary font-bold text-[13px] border border-brand-border hover:border-brand-accent hover:bg-brand-accent/5 transition-all py-2.5 px-4 rounded-full"
                 >
                   {link.icon}
                   {link.label}
@@ -79,10 +79,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* HÀNG DƯỚI: Bản quyền */}
+        {/* HÀNG DƯỚI: Footer Base */}
         <div className="flex flex-col md:flex-row items-center justify-between py-10 gap-6">
-          <div className="text-brand-soft-text text-[12px] md:text-[13px] font-medium opacity-60">© 2026 TP GROWTH MARKETING. Bản quyền thuộc về tác giả.</div>
-          <div className="flex items-center gap-6 md:gap-10">
+          <div className="text-brand-soft-text text-[12px] font-medium opacity-60">© 2026 TP GROWTH MARKETING.</div>
+          <div className="flex items-center gap-6">
             <a href="#" className="text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4">Bảo mật</a>
             <a href="#" className="text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4">Điều khoản</a>
           </div>
