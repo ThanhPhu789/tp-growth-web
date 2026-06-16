@@ -37,8 +37,8 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-6">
-        {/* HÀNG TRÊN: Logo, Slogan & Liên hệ */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 pb-16 border-b border-brand-border text-center lg:text-left">
+        {/* HÀNG TRÊN: Logo, Slogan & Liên hệ - Đã căn lại layout */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-start lg:gap-32 gap-10 pb-16 border-b border-brand-border text-center lg:text-left">
           
           {/* Khối Logo & Slogan */}
           <div className="flex flex-col items-center lg:items-start gap-4">
@@ -55,7 +55,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Cụm Link Liên hệ */}
+          {/* Cụm Link Liên hệ - Căn chỉnh lg:pt-3 để thẳng hàng với Slogan */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:pt-3">
             {[
               { icon: <MessageCircle className="w-5 h-5 text-[#0068FF]" />, label: 'Zalo', url: 'https://zalo.me/0766911958' },
