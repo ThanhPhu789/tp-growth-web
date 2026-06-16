@@ -40,20 +40,23 @@ export default function Footer() {
         {/* LAYOUT FOOTER CHÍNH */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 pb-16 border-b border-brand-border items-start">
           
-          {/* CỘT TRÁI: Brand Identity - LOGO ĐÃ ĐƯỢC THẢ RA */}
-          <div className="flex items-start gap-6">
-            <div className="shrink-0 h-16 w-16 md:h-20 md:w-20">
-              <TPLogo size="custom" className="h-full w-full object-contain" />
-            </div>
-            <div className="flex flex-col justify-center h-16 md:h-20">
-              <h3 className="text-[18px] md:text-[20px] font-black text-brand-primary tracking-tight uppercase leading-tight">
-                Growth Through System
-              </h3>
-              <p className="text-brand-secondary font-medium text-[14px] md:text-[15px] opacity-70 leading-relaxed mt-1">
-                Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến & minh bạch.
-              </p>
-            </div>
-          </div>
+          {/* CỘT TRÁI: Brand Identity */}
+<div className="flex items-center gap-6">
+  {/* Khung hình chữ nhật ngang, ôm theo tỉ lệ logo */}
+  <div className="h-16 md:h-[72px] bg-white border border-brand-border rounded-xl flex items-center justify-center shadow-sm px-4 py-3 shrink-0">
+    <TPLogo size="custom" className="h-full w-auto object-contain" />
+  </div>
+  
+  {/* Text block */}
+  <div className="flex flex-col justify-center">
+    <h3 className="text-[18px] md:text-[20px] font-black text-brand-primary tracking-tight uppercase leading-tight">
+      Growth Through System
+    </h3>
+    <p className="text-brand-secondary font-medium text-[14px] md:text-[15px] opacity-70 leading-relaxed mt-1">
+      Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến & minh bạch.
+    </p>
+  </div>
+</div>
 
           {/* CỘT PHẢI: Contact */}
           <div className="flex flex-col items-center lg:items-end gap-3 w-full">
