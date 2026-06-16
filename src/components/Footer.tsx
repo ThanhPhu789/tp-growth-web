@@ -50,7 +50,7 @@ export default function Footer() {
                 Growth Through System
               </h3>
               <p className="text-brand-secondary font-medium text-[14px] md:text-[15px] opacity-70 leading-relaxed mt-1">
-                Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến & minh bạch.
+                Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến, minh bạch và sinh lời.
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function Footer() {
 
         {/* HÀNG DƯỚI: Footer Base */}
         <div className="flex flex-col md:flex-row items-center justify-between py-10 gap-6">
-          <div className="text-brand-soft-text text-[12px] font-medium opacity-60">© 2026 TP GROWTH MARKETING.</div>
+          <div className="text-brand-soft-text text-[12px] font-medium opacity-60">© 2026 ThanhPhu Growth With Marketing.</div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4">Bảo mật</a>
             <a href="#" className="text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4">Điều khoản</a>
