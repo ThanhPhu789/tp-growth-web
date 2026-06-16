@@ -53,7 +53,7 @@ export default function Footer() {
       Growth Through System
     </h3>
     <p className="text-brand-secondary font-medium text-[14px] md:text-[15px] opacity-70 leading-relaxed mt-1">
-      Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến & minh bạch.
+      Đồng hành cùng chủ doanh nghiệp xây dựng hệ thống marketing thực chiến, minh bạch và ra tiền.
     </p>
   </div>
 </div>
