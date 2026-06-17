@@ -70,18 +70,20 @@ export default function Hero() {
             </div>
 
             <h1 className="font-heading text-[38px] sm:text-[42px] md:text-[50px] lg:text-[54px] xl:text-[68px] font-black leading-[1.05] md:leading-[1.0] text-brand-primary mb-6 md:mb-10 tracking-[-0.03em] lg:tracking-[-0.04em] [text-wrap:balance]">
-              Càng scale, nhiều chủ doanh nghiệp càng mất cảm giác{' '}
-              <span className="text-brand-accent relative inline-block mt-0 lg:mt-2">
-                mình đang kiểm soát
-                <motion.span 
-                  initial={{ width: 0 }}
-                  animate={{ width: '100%' }}
-                  transition={{ delay: 1, duration: 0.8 }}
-                  className="absolute bottom-[2px] md:bottom-2 left-0 h-[6px] md:h-[8px] bg-brand-accent/15 -z-10 rounded-sm" 
-                />
-              </span>{' '}
-              business.
-            </h1>
+  Doanh nghiệp không thiếu khách.
+  <br />
+  Họ thiếu{' '}
+  <span className="text-brand-accent relative inline-block mt-0 lg:mt-2">
+    hệ thống
+    <motion.span
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      transition={{ delay: 1, duration: 0.8 }}
+      className="absolute bottom-[2px] md:bottom-2 left-0 h-[6px] md:h-[8px] bg-brand-accent/15 -z-10 rounded-sm"
+    />
+  </span>{' '}
+  để ra khách đều.
+</h1>
 
             <div className="text-[16px] sm:text-[17px] md:text-[20px] text-brand-secondary leading-[1.6] md:leading-[1.8] max-w-[640px] mb-10 md:mb-14 font-medium opacity-90 space-y-6">
               <p>
@@ -118,7 +120,7 @@ export default function Hero() {
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-accent mt-2 shrink-0" />
-                    <span className="text-[15px] md:text-[16px] font-bold text-brand-primary/80">Và nên sửa gì trước khi tiếp tục đốt thêm ngân sách.</span>
+                    <span className="text-[15px] md:text-[16px] font-bold text-brand-primary/80">Và nên sửa gì trước khi tiếp tục lãng phí thêm ngân sách.</span>
                   </div>
                 </div>
               </div>
