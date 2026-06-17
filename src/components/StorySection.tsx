@@ -2,26 +2,21 @@ import { motion } from 'motion/react';
 import { AlertCircle } from 'lucide-react';
 import FragmentedSystem from './FragmentedSystem';
 
-export default function StorySection() {
-  return (
-    <div className="bg-white relative">
-      {/* SECTION: TẠI SAO TÔI LÀM THỨ NÀY */}
-      <section className="py-12 md:py-24 container mx-auto px-6 relative overflow-hidden">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 md:gap-12 lg:gap-24 items-center max-w-7xl mx-auto">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-10 md:mb-12"
-            >
-              <div className="flex items-center gap-2 mb-6 uppercase tracking-[0.4em] text-[11px] font-black text-brand-highlight">
-                STORY
-              </div>
-              <h2 className="font-heading text-[32px] md:text-[44px] font-extrabold text-brand-primary leading-[1.05] md:leading-[1.0] tracking-[-0.03em] md:tracking-[-0.04em]">
-                Tại sao tôi làm <br className="hidden md:block" /> thứ này?
-              </h2>
-            </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="mb-10 md:mb-12"
+>
+  <div className="flex items-center gap-2 mb-6 uppercase tracking-[0.4em] text-[11px] font-black text-brand-highlight">
+    SYSTEM THINKING
+  </div>
+
+  <h2 className="font-heading text-[32px] md:text-[44px] font-extrabold text-brand-primary leading-[1.05] md:leading-[1.0] tracking-[-0.03em] md:tracking-[-0.04em]">
+    Điều làm doanh nghiệp nhỏ chậm lại
+    <br className="hidden md:block" />
+    thường nằm giữa các phòng ban.
+  </h2>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
