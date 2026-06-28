@@ -1,0 +1,1 @@
+This folder is reserved for future static content such as Growth Notes, Case Studies, and lead magnets. In the early stage, content can be managed as Markdown/MDX or JSON in the repo. A headless CMS can be added later when the content volume and team workflow require it.
