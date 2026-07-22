@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2, ChevronRight, CircleDot, Layers3, Target } from 'lucide-react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { siteImageData } from '../data/siteImages';
 
 const quickMap = [
   ['01', 'Đúng trước khi nhanh', 'Kiểm tra lại nền tảng: khách hàng, sản phẩm, thông điệp, kênh, sales process, tracking và KPI.'],
@@ -66,6 +67,8 @@ function AuditButton({ className = '' }: { className?: string }) {
 }
 
 export default function GrowthSystemDetail() {
+  const systemProofImage = siteImageData('Google tag manager GTM - Website Tracking API chuyên sâu đa kênh.jpg');
+
   return (
     <div className="min-h-screen bg-white text-[#0F172A]">
       <Header />
@@ -81,6 +84,22 @@ export default function GrowthSystemDetail() {
         <section className="py-14 md:py-20"><div className="container mx-auto px-5 sm:px-6 lg:px-8"><div className="mx-auto mb-10 max-w-3xl text-center md:mb-14"><Eyebrow>SYSTEM MAP</Eyebrow><h2 className="font-heading text-[34px] font-extrabold leading-[1.06] tracking-[-0.04em] md:text-[46px]">Growth System™ đi qua 3 tầng trước khi nói đến scale.</h2><p className="mt-4 text-[16px] font-medium leading-[1.7] text-[#334155]">Nếu nhảy thẳng vào chạy ads, tuyển thêm người hoặc làm thêm content, doanh nghiệp rất dễ scale cả sự rối loạn đang có.</p></div><div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">{quickMap.map(([number, title, body], index) => <article key={title} className={`rounded-[20px] border p-6 shadow-sm ${index === 2 ? 'border-[#BFDBFE] bg-[#EFF6FF]' : 'border-[#E2E8F0] bg-white'}`}><div className="text-[32px] font-black tracking-[-0.05em] text-[#1D4ED8]">{number}</div><h3 className="mt-5 font-heading text-[22px] font-extrabold tracking-[-0.03em]">{title}</h3><p className="mt-3 text-[14px] font-medium leading-[1.65] text-[#334155]">{body}</p></article>)}</div><p className="mx-auto mt-8 max-w-3xl text-center text-[16px] font-bold leading-[1.6] text-[#0F172A]">Growth không phải điểm bắt đầu. Growth là kết quả của một hệ thống đã đủ rõ để scale.</p></div></section>
 
         <section className="border-y border-[#E2E8F0] bg-[#F8FAFC] py-14 md:py-20"><div className="container mx-auto grid items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8"><div className="max-w-xl"><Eyebrow>SYSTEM PROBLEM</Eyebrow><h2 className="font-heading text-[34px] font-extrabold leading-[1.06] tracking-[-0.04em] md:text-[46px]">Nhiều doanh nghiệp không thiếu nỗ lực.</h2><div className="mt-6 space-y-1 text-[17px] font-semibold leading-[1.65] text-[#334155]"><p>Họ có sản phẩm. Họ có nhân sự. Họ có ngân sách. Họ có marketing.</p><p className="pt-3 text-[#0F172A]">Nhưng tăng trưởng vẫn chậm.</p><p className="pt-3">Càng đầu tư marketing, mọi thứ lại càng phức tạp hơn: có thêm nhân sự, agency, báo cáo và dữ liệu. Nhưng Founder vẫn phải tự theo dõi mọi thứ.</p></div><p className="mt-6 border-l-2 border-[#1D4ED8] pl-5 text-[16px] font-bold leading-[1.6] text-[#0F172A]">Vấn đề thường không nằm ở việc chưa làm đủ. Vấn đề nằm ở việc chưa nhìn được toàn bộ hệ thống.</p></div><div className="rounded-[24px] border border-[#E2E8F0] bg-white p-5 shadow-brand-soft"><div className="mb-5 flex items-center justify-between"><span className="text-[10px] font-black uppercase tracking-[0.16em] text-[#EA580C]">System Missing</span><CircleDot className="h-5 w-5 text-[#1D4ED8]" /></div><div className="grid grid-cols-2 gap-3">{['Ads', 'Content', 'Sales', 'Reporting'].map((item) => <div key={item} className="rounded-[16px] border border-[#E2E8F0] bg-[#F8FAFC] p-4 text-[14px] font-bold text-[#334155]">{item}</div>)}<div className="col-span-2 rounded-[16px] border border-dashed border-[#BFDBFE] bg-[#EFF6FF] p-4 text-center text-[14px] font-extrabold text-[#1D4ED8]">Founder</div></div></div></div></section>
+
+        <div className="bg-[#F8FAFC] pb-14 md:pb-20">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-6xl overflow-hidden rounded-[20px] border border-[#E2E8F0] bg-white shadow-sm">
+              <img
+                src={systemProofImage.src}
+                alt={systemProofImage.alt}
+                width={systemProofImage.width}
+                height={systemProofImage.height}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[16/8] h-full w-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
 
         <section className="py-14 md:py-20"><div className="container mx-auto px-5 sm:px-6 lg:px-8"><div className="mx-auto max-w-3xl text-center"><Eyebrow>FALSE START</Eyebrow><h2 className="font-heading text-[34px] font-extrabold leading-[1.06] tracking-[-0.04em] md:text-[46px]">Nhiều người nghĩ vấn đề nằm ở việc chưa làm thêm.</h2></div><div className="mx-auto mt-10 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">{['Chưa chạy đủ quảng cáo', 'Chưa tuyển đúng người', 'Chưa làm đủ content', 'Chưa có agency giỏi'].map((item) => <div key={item} className="rounded-[18px] border border-[#E2E8F0] bg-white p-5 text-[15px] font-bold text-[#334155]">{item}</div>)}</div><div className="mx-auto mt-6 max-w-6xl rounded-[20px] border border-[#BFDBFE] bg-[#EFF6FF] p-6 text-[16px] font-semibold leading-[1.65] text-[#1D4ED8]">Nhưng phần lớn doanh nghiệp không thiếu hoạt động. Họ thiếu một hệ thống giúp nhìn rõ điều gì đang tạo ra tăng trưởng, điều gì đang làm thất thoát ngân sách, thất thoát doanh thu và điều gì nên được sửa tiếp theo.</div></div></section>
 

@@ -31,6 +31,8 @@ function GrowthNoteCover({ post, featured = false }: GrowthNoteCardProps) {
           width={cover.width}
           height={cover.height}
           loading={featured ? 'eager' : 'lazy'}
+          fetchPriority={featured ? 'high' : 'auto'}
+          decoding="async"
           className={`h-full w-full transition-transform duration-500 hover:scale-[1.02] ${fitClass}`}
         />
       ) : (

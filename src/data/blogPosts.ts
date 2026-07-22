@@ -1,3 +1,5 @@
+import { normalizeSiteImage, siteImage } from './siteImages';
+
 export type BlogImage = {
   src: string;
   alt: string;
@@ -303,7 +305,7 @@ export type BlogPost = {
   cta: string;
 };
 
-export const blogPosts: BlogPost[] = [
+const blogPostsSource: BlogPost[] = [
   {
     title: 'Doanh nghiệp không thiếu ads, họ thiếu hệ thống',
     slug: 'doanh-nghiep-khong-thieu-ads-ho-thieu-he-thong',
@@ -311,7 +313,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '6–8 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-result-01.jpg",
+                "src": siteImage("digital-marketing-vs-growth-marketing-framework.jpg"),
                 "alt": "PageSpeed performance report screenshot",
                 "caption": "PageSpeed performance result",
                 "width": 2048,
@@ -320,7 +322,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-diagnostics-01.jpg",
+                      "src": siteImage("marketing-strategy-meeting-with-management.jpg"),
                       "alt": "PageSpeed Insights diagnostics screenshot",
                       "caption": "PageSpeed diagnostics",
                       "width": 2880,
@@ -453,7 +455,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-mobile-result-01.jpg",
+                "src": siteImage("GA4 Tracking → User Behavior Insights.jpg"),
                 "alt": "PageSpeed Insights mobile performance screenshot",
                 "caption": "PageSpeed mobile performance result",
                 "width": 2880,
@@ -462,7 +464,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-performance-summary-01.jpg",
+                      "src": siteImage("Casestyudy sơn lại facebook ads mess + remarrketing.jpg"),
                       "alt": "PageSpeed Insights performance summary screenshot",
                       "caption": "PageSpeed performance summary",
                       "width": 2880,
@@ -582,7 +584,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-conference-room-audience-session-01.jpg",
+                "src": siteImage("Hệ thống SOP & quản lý công việc Marketing.jpg"),
                 "alt": "Audience watching a presentation in a training room",
                 "caption": "Training session audience",
                 "width": 2048,
@@ -591,7 +593,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-meeting-room-presentation-discussion-01.jpg",
+                      "src": siteImage("marketing-team-office-working-session.jpg"),
                       "alt": "People in a meeting room during a workshop",
                       "caption": "Workshop discussion in meeting room",
                       "width": 2048,
@@ -723,7 +725,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-result-01.jpg",
+                "src": siteImage("ga4-realtime-traffic-monitoring-dashboard.jpg"),
                 "alt": "PageSpeed performance report screenshot",
                 "caption": "PageSpeed performance result",
                 "width": 2048,
@@ -732,7 +734,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/team-meeting/team-meeting-company-team-office-team-group-01.jpg",
+                      "src": siteImage("remote-work-marketing-planning.jpg"),
                       "alt": "Office team group photo",
                       "caption": "Office team group moment",
                       "width": 1280,
@@ -886,7 +888,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-diagnostics-01.jpg",
+                "src": siteImage("Quản lý team realtime theo task.jpg"),
                 "alt": "PageSpeed Insights diagnostics screenshot",
                 "caption": "PageSpeed diagnostics",
                 "width": 2880,
@@ -895,7 +897,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-mobile-result-01.jpg",
+                      "src": siteImage("marketing-workshop-classroom-session.jpg"),
                       "alt": "PageSpeed Insights mobile performance screenshot",
                       "caption": "PageSpeed mobile performance result",
                       "width": 2880,
@@ -1049,7 +1051,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-workshop-selfie-01.jpg",
+                "src": siteImage("GTM - Tracking Chuyên Sâu Đa Kênh.jpg"),
                 "alt": "Workshop room selfie with people at a table",
                 "caption": "Workshop working session",
                 "width": 1448,
@@ -1058,7 +1060,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-whiteboard-standing-presentation-01.jpg",
+                      "src": siteImage("Thẻ GTM - Website Tracking API chuyên sâu Facebook - Google - Youtube.jpg"),
                       "alt": "Person presenting at a board during a workshop",
                       "caption": "Workshop board presentation",
                       "width": 1386,
@@ -1215,7 +1217,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-marketing-strategy-session-01.jpg",
+                "src": siteImage("CAPI Chuyển Đổi - Tracking Chuyên Sâu Website với GTM.jpg"),
                 "alt": "Workshop room with a marketing strategy presentation",
                 "caption": "Marketing strategy workshop session",
                 "width": 1332,
@@ -1224,7 +1226,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-conference-room-audience-talk-01.jpg",
+                      "src": siteImage("Facebook Ads chuyển đổi Website Tracking CAPI chuyên sâu cho ngành dịch vụ nút Hotline - Zalo - Mess.jpg"),
                       "alt": "Audience watching a presentation in a workshop room",
                       "caption": "Workshop audience session",
                       "width": 1536,
@@ -1408,7 +1410,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-performance-summary-01.jpg",
+                "src": siteImage("Google Ads Tracking chuyên sâu cho ngành dịch vụ.jpg"),
                 "alt": "PageSpeed Insights performance summary screenshot",
                 "caption": "PageSpeed performance summary",
                 "width": 2880,
@@ -1417,7 +1419,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-conference-room-audience-session-01.jpg",
+                      "src": siteImage("marketing-strategy-professional-training.jpg"),
                       "alt": "Audience watching a presentation in a training room",
                       "caption": "Training session audience",
                       "width": 2048,
@@ -1572,7 +1574,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-presentation-discussion-01.jpg",
+                "src": siteImage("Server-Side and Tracking GTM đa kênh.jpg"),
                 "alt": "People in a meeting room during a workshop",
                 "caption": "Workshop discussion in meeting room",
                 "width": 2048,
@@ -1581,7 +1583,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-whiteboard-standing-presentation-01.jpg",
+                      "src": siteImage("Server-Side and Tracking GTM.jpg"),
                       "alt": "Person presenting at a board during a workshop",
                       "caption": "Workshop board presentation",
                       "width": 1386,
@@ -1730,7 +1732,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-workshop-selfie-01.jpg",
+                "src": siteImage("Google tag manager GTM - Website Tracking API chuyên sâu đa kênh.jpg"),
                 "alt": "Workshop room selfie with people at a table",
                 "caption": "Workshop working session",
                 "width": 1448,
@@ -1739,7 +1741,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-conference-room-audience-talk-01.jpg",
+                      "src": siteImage("Google Ads Search & Youtube Ads.jpg"),
                       "alt": "Audience watching a presentation in a workshop room",
                       "caption": "Workshop audience session",
                       "width": 1536,
@@ -1915,7 +1917,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-marketing-strategy-session-01.jpg",
+                "src": siteImage("TikTok-Ads-multi-campaign-conversion-management.jpg"),
                 "alt": "Workshop room with a marketing strategy presentation",
                 "caption": "Marketing strategy workshop session",
                 "width": 1332,
@@ -1924,7 +1926,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-result-01.jpg",
+                      "src": siteImage("electronics-retail-customer-experience-fieldwork.jpg"),
                       "alt": "PageSpeed performance report screenshot",
                       "caption": "PageSpeed performance result",
                       "width": 2048,
@@ -2103,7 +2105,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-diagnostics-01.jpg",
+                "src": siteImage("google-ads-search-youtube-full-funnel-conversion.jpg"),
                 "alt": "PageSpeed Insights diagnostics screenshot",
                 "caption": "PageSpeed diagnostics",
                 "width": 2880,
@@ -2112,7 +2114,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-mobile-result-01.jpg",
+                      "src": siteImage("Optimize Craative & Tracking ads rẻ.jpg"),
                       "alt": "PageSpeed Insights mobile performance screenshot",
                       "caption": "PageSpeed mobile performance result",
                       "width": 2880,
@@ -2297,7 +2299,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/website-landingpage/website-landingpage-pagespeed-pagespeed-performance-summary-01.jpg",
+                "src": siteImage("pagespeed-optimization-heavy-elementor-website.jpg"),
                 "alt": "PageSpeed Insights performance summary screenshot",
                 "caption": "PageSpeed performance summary",
                 "width": 2880,
@@ -2306,7 +2308,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-conference-room-audience-session-01.jpg",
+                      "src": siteImage("Tool convert ảnh PNG-JPG sang Webp Free tối ưu time load trang.jpg"),
                       "alt": "Audience watching a presentation in a training room",
                       "caption": "Training session audience",
                       "width": 2048,
@@ -2476,7 +2478,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-presentation-discussion-01.jpg",
+                "src": siteImage("meta-ads-multi-campaign-performance-management.jpg"),
                 "alt": "People in a meeting room during a workshop",
                 "caption": "Workshop discussion in meeting room",
                 "width": 2048,
@@ -2485,7 +2487,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-whiteboard-standing-presentation-01.jpg",
+                      "src": siteImage("Case campaign camera hành trình blackvue 750 lte 2.jpg"),
                       "alt": "Person presenting at a board during a workshop",
                       "caption": "Workshop board presentation",
                       "width": 1386,
@@ -2652,7 +2654,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/team-meeting/team-meeting-company-team-office-team-group-01.jpg",
+                "src": siteImage("paid-media facebook ads Blachvue dr750 lte.jpg"),
                 "alt": "Office team group photo",
                 "caption": "Office team group moment",
                 "width": 1280,
@@ -2661,7 +2663,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-conference-room-audience-talk-01.jpg",
+                      "src": siteImage("professional-marketing-training-seminar.jpg"),
                       "alt": "Audience watching a presentation in a workshop room",
                       "caption": "Workshop audience session",
                       "width": 1536,
@@ -2828,7 +2830,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-workshop-selfie-01.jpg",
+                "src": siteImage("marketing-seminar-learning-session.jpg"),
                 "alt": "Workshop room selfie with people at a table",
                 "caption": "Workshop working session",
                 "width": 1448,
@@ -2837,7 +2839,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-meeting-room-marketing-strategy-session-01.jpg",
+                      "src": siteImage("business-networking-partner-meeting.jpg"),
                       "alt": "Workshop room with a marketing strategy presentation",
                       "caption": "Marketing strategy workshop session",
                       "width": 1332,
@@ -2992,7 +2994,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-dinner-team-dinner-group-01.jpg",
+                "src": siteImage("Camp Sơn Lại Sáng cũ chiều mới youtube ads conversions.jpg"),
                 "alt": "Team group selfie at a restaurant table",
                 "caption": "Team meal group photo",
                 "width": 2560,
@@ -3001,7 +3003,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/company-work/company-work-team-dinner-restaurant-team-group-01.jpg",
+                      "src": siteImage("Casestyudy sơn lại facebook ads mess + remarrketing 2.jpg"),
                       "alt": "Team members gathered around a restaurant table",
                       "caption": "Team dinner group photo",
                       "width": 2560,
@@ -3180,7 +3182,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-operations-warehouse-boxes-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte 6.jpg"),
                 "alt": "Person beside stacked product boxes in a work area",
                 "caption": "Operations and product stock moment",
                 "width": 2048,
@@ -3189,7 +3191,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/company-work/company-work-partnership-tablet-handoff-01.jpg",
+                      "src": siteImage("Case campaign camera hành trình blackvue 750 lte 7.jpg"),
                       "alt": "Two people standing outdoors with a tablet",
                       "caption": "Work partnership moment",
                       "width": 2048,
@@ -3364,7 +3366,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-dinner-team-dinner-group-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte 8.jpg"),
                 "alt": "Team group selfie at a restaurant table",
                 "caption": "Team meal group photo",
                 "width": 2560,
@@ -3373,7 +3375,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/company-work/company-work-operations-box-carrying-01.jpg",
+                      "src": siteImage("Case campaign camera hành trình blackvue 750 lte 9.jpg"),
                       "alt": "Person carrying a product box in a work area",
                       "caption": "Operations work moment",
                       "width": 1536,
@@ -3550,7 +3552,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-dinner-restaurant-team-group-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte 10.jpg"),
                 "alt": "Team members gathered around a restaurant table",
                 "caption": "Team dinner group photo",
                 "width": 2560,
@@ -3559,7 +3561,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/company-work/company-work-team-group-formal-team-photo-01.jpg",
+                      "src": siteImage("Case campaign camera hành trình blackvue 750 lte 12.jpg"),
                       "alt": "Formal team group photo indoors",
                       "caption": "Formal team group photo",
                       "width": 958,
@@ -3737,7 +3739,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-operations-warehouse-boxes-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte 13 Youtube Ads.jpg"),
                 "alt": "Person beside stacked product boxes in a work area",
                 "caption": "Operations and product stock moment",
                 "width": 2048,
@@ -3746,7 +3748,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/company-work/company-work-partnership-tablet-handoff-01.jpg",
+                      "src": siteImage("Youtube ads web conversions casestudy Sơn lại.jpg"),
                       "alt": "Two people standing outdoors with a tablet",
                       "caption": "Work partnership moment",
                       "width": 2048,
@@ -3925,7 +3927,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/team-meeting/team-meeting-company-team-office-team-group-01.jpg",
+                "src": siteImage("Youtube ads web conversions casestudy Blackvue DR750 LTE.jpg"),
                 "alt": "Office team group photo",
                 "caption": "Office team group moment",
                 "width": 1280,
@@ -3934,7 +3936,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/company-work/company-work-operations-box-carrying-01.jpg",
+                      "src": siteImage("retail-product-inventory-warehouse-operation.jpg"),
                       "alt": "Person carrying a product box in a work area",
                       "caption": "Operations work moment",
                       "width": 1536,
@@ -4116,7 +4118,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-conference-room-audience-session-01.jpg",
+                "src": siteImage("warehouse-operation-field-visit-factory.jpg"),
                 "alt": "Audience watching a presentation in a training room",
                 "caption": "Training session audience",
                 "width": 2048,
@@ -4125,7 +4127,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-meeting-room-presentation-discussion-01.jpg",
+                      "src": siteImage("Case campaign camera hành trình blackvue 750 lte Brand Sponsorship → Premium Community Reach.jpg"),
                       "alt": "People in a meeting room during a workshop",
                       "caption": "Workshop discussion in meeting room",
                       "width": 2048,
@@ -4305,7 +4307,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-product-demo-booth-01.jpg",
+                "src": siteImage("brand-activation-outdoor-event-team.jpg"),
                 "alt": "People at an exhibition booth with product displays",
                 "caption": "Exhibition booth activity",
                 "width": 1600,
@@ -4314,7 +4316,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/events/events-exhibition-outdoor-booth-01.jpg",
+                      "src": siteImage("outdoor-brand-booth-event-operation.jpg"),
                       "alt": "Outdoor exhibition booth with visitors",
                       "caption": "Outdoor exhibition booth",
                       "width": 1920,
@@ -4500,7 +4502,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-booth-team-demo-01.jpg",
+                "src": siteImage("brand-event-stage-team-photo.jpg"),
                 "alt": "Team members at an exhibition booth serving visitors",
                 "caption": "Exhibition booth team activity",
                 "width": 2048,
@@ -4509,7 +4511,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/events/events-internal-event-team-group-stage-01.jpg",
+                      "src": siteImage("marketing-event-team-group-photo.jpg"),
                       "alt": "Large team group photo in an indoor venue",
                       "caption": "Team group photo at an indoor event",
                       "width": 2048,
@@ -4695,7 +4697,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-company-trip-night-group-photo-01.jpg",
+                "src": siteImage("community-workshop-event-operation-team.jpg"),
                 "alt": "Large group photo at a night event backdrop",
                 "caption": "Night event group photo",
                 "width": 2048,
@@ -4704,7 +4706,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/events/events-exhibition-outdoor-demo-01.jpg",
+                      "src": siteImage("event-operation-team-photo.jpg"),
                       "alt": "Outdoor exhibition booth activity",
                       "caption": "Exhibition booth activity",
                       "width": 2048,
@@ -4892,7 +4894,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-team-backdrop-01.jpg",
+                "src": siteImage("event-production-team-video-operatio.jpg"),
                 "alt": "Team posing in front of an exhibition backdrop",
                 "caption": "Exhibition team group photo",
                 "width": 2048,
@@ -4901,7 +4903,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/events/events-exhibition-outdoor-portrait-01.jpg",
+                      "src": siteImage("marketing-workshop-team-networking.jpg"),
                       "alt": "Person standing outdoors near an event area",
                       "caption": "Outdoor event portrait",
                       "width": 1536,
@@ -5106,7 +5108,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-networking-night-waterfront-group-01.jpg",
+                "src": siteImage("msport-product-exhibition-booth.jpg"),
                 "alt": "Small group standing at a night waterfront event",
                 "caption": "Night networking group photo",
                 "width": 2048,
@@ -5115,7 +5117,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/events/events-exhibition-booth-crowd-01.jpg",
+                      "src": siteImage("event-logistics-product-delivery-operation.jpg"),
                       "alt": "People gathered around an exhibition booth",
                       "caption": "Exhibition booth crowd",
                       "width": 2048,
@@ -5308,7 +5310,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-stage-team-01.jpg",
+                "src": siteImage("marketing-video-team-training.jpg"),
                 "alt": "Team posing on an exhibition stage",
                 "caption": "Exhibition stage team photo",
                 "width": 2048,
@@ -5317,7 +5319,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/events/events-exhibition-brand-shirt-portrait-01.jpg",
+                      "src": siteImage("marketing-training-session-behind-the-scenes.jpg"),
                       "alt": "Person in a branded shirt at an exhibition booth",
                       "caption": "Exhibition booth portrait",
                       "width": 640,
@@ -5515,7 +5517,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-outdoor-event-walk-01.jpg",
+                "src": siteImage("interactive-screen-business-presentation.jpg"),
                 "alt": "Person walking in an outdoor event area",
                 "caption": "Outdoor event moment",
                 "width": 2048,
@@ -5524,7 +5526,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/events/events-networking-restaurant-toast-01.jpg",
+                      "src": siteImage("msport-event-product-presentation.jpg"),
                       "alt": "Group toasting at a crowded event table",
                       "caption": "Team networking toast",
                       "width": 2048,
@@ -5733,7 +5735,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-conference-conference-portrait-01.jpg",
+                "src": siteImage("vniq-business-networking-event.jpg"),
                 "alt": "Person standing in front of a conference backdrop",
                 "caption": "Conference portrait",
                 "width": 2048,
@@ -5742,7 +5744,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/events/events-exhibition-product-demo-booth-01.jpg",
+                      "src": siteImage("business-conference-keynote-session.jpg"),
                       "alt": "People at an exhibition booth with product displays",
                       "caption": "Exhibition booth activity",
                       "width": 1600,
@@ -5932,7 +5934,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-workshop-selfie-01.jpg",
+                "src": siteImage("company-team-building-celebration.jpg"),
                 "alt": "Workshop room selfie with people at a table",
                 "caption": "Workshop working session",
                 "width": 1448,
@@ -5941,7 +5943,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-whiteboard-standing-presentation-01.jpg",
+                      "src": siteImage("marketing-industry-awards-event.jpg"),
                       "alt": "Person presenting at a board during a workshop",
                       "caption": "Workshop board presentation",
                       "width": 1386,
@@ -6150,7 +6152,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-marketing-strategy-session-01.jpg",
+                "src": siteImage("marketing-panel-discussion-speaker.jpg"),
                 "alt": "Workshop room with a marketing strategy presentation",
                 "caption": "Marketing strategy workshop session",
                 "width": 1332,
@@ -6159,7 +6161,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-conference-room-audience-talk-01.jpg",
+                      "src": siteImage("professional-learning-team-dinner.jpg"),
                       "alt": "Audience watching a presentation in a workshop room",
                       "caption": "Workshop audience session",
                       "width": 1536,
@@ -6365,7 +6367,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-dinner-team-dinner-group-01.jpg",
+                "src": siteImage("marketing-networking-team-dinner.jpg"),
                 "alt": "Team group selfie at a restaurant table",
                 "caption": "Team meal group photo",
                 "width": 2560,
@@ -6374,7 +6376,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/company-work/company-work-team-group-formal-team-photo-01.jpg",
+                      "src": siteImage("night-event-brand-activation.jpg"),
                       "alt": "Formal team group photo indoors",
                       "caption": "Formal team group photo",
                       "width": 958,
@@ -6569,7 +6571,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-dinner-restaurant-team-group-01.jpg",
+                "src": siteImage("business-travel-airport-field-trip.jpg"),
                 "alt": "Team members gathered around a restaurant table",
                 "caption": "Team dinner group photo",
                 "width": 2560,
@@ -6578,7 +6580,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/personal-brand/personal-brand-lifestyle-night-portrait-01.jpg",
+                      "src": siteImage("business-trip-remote-working-moment.jpg"),
                       "alt": "Person standing outdoors at night",
                       "caption": "Outdoor personal brand portrait",
                       "width": 1133,
@@ -6777,7 +6779,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-operations-warehouse-boxes-01.jpg",
+                "src": siteImage("phan-thanh-phu-university-graduation.jpg"),
                 "alt": "Person beside stacked product boxes in a work area",
                 "caption": "Operations and product stock moment",
                 "width": 2048,
@@ -6786,7 +6788,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/company-work/company-work-partnership-tablet-handoff-01.jpg",
+                      "src": siteImage("Case campaign camera hành trình blackvue 750 lte 14 Youtube.jpg"),
                       "alt": "Two people standing outdoors with a tablet",
                       "caption": "Work partnership moment",
                       "width": 2048,
@@ -6948,7 +6950,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-outdoor-booth-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte 15 Youtube review booking.jpg"),
                 "alt": "Outdoor exhibition booth with visitors",
                 "caption": "Outdoor exhibition booth",
                 "width": 1920,
@@ -6957,7 +6959,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/events/events-exhibition-booth-team-demo-01.jpg",
+                      "src": siteImage("Case campaign camera hành trình blackvue 750 lte Product Use Cases.jpg"),
                       "alt": "Team members at an exhibition booth serving visitors",
                       "caption": "Exhibition booth team activity",
                       "width": 2048,
@@ -7120,7 +7122,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-internal-event-team-group-stage-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte Customer Feedback Video  4.jpg"),
                 "alt": "Large team group photo in an indoor venue",
                 "caption": "Team group photo at an indoor event",
                 "width": 2048,
@@ -7129,7 +7131,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/company-work/company-work-operations-box-carrying-01.jpg",
+                      "src": siteImage("Case campaign camera hành trình GNET G-ON X - KOL Review Sản phẩm 1.jpg"),
                       "alt": "Person carrying a product box in a work area",
                       "caption": "Operations work moment",
                       "width": 1536,
@@ -7309,7 +7311,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-conference-room-audience-session-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok 1.jpg"),
                 "alt": "Audience watching a presentation in a training room",
                 "caption": "Training session audience",
                 "width": 2048,
@@ -7318,7 +7320,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/training-workshop/training-workshop-meeting-room-presentation-discussion-01.jpg",
+                      "src": siteImage("Case FnB Build kênh Tiktok 2.jpg"),
                       "alt": "People in a meeting room during a workshop",
                       "caption": "Workshop discussion in meeting room",
                       "width": 2048,
@@ -7498,7 +7500,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/speaking/speaking-panel-discussion-three-speakers-01.jpg",
+                "src": siteImage("team-marketing-presentation-workshop AI Co-work-Claude.jpg"),
                 "alt": "Three speakers holding microphones at an event",
                 "caption": "Speaking session with three presenters",
                 "width": 2048,
@@ -7507,7 +7509,7 @@ export const blogPosts: BlogPost[] = [
           },
           "inlineImages": [
                 {
-                      "src": "/images/media-library/content-media/content-media-seo-seo-infographic-01.jpg",
+                      "src": siteImage("seo-strategy-framework-learning-material.jpg"),
                       "alt": "SEO infographic with a robot illustration",
                       "caption": "SEO infographic",
                       "width": 1414,
@@ -7682,7 +7684,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-company-trip-night-group-photo-01.jpg",
+                "src": siteImage("interactive-screen-business-presentation.jpg"),
                 "alt": "Large group photo at a night event backdrop",
                 "caption": "Night event group photo",
                 "width": 2048,
@@ -7855,7 +7857,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/team-meeting/team-meeting-company-team-office-team-group-01.jpg",
+                "src": siteImage("team-marketing-presentation-workshop AI Co-work-Claude.jpg"),
                 "alt": "Office team group photo",
                 "caption": "Office team group moment",
                 "width": 1280,
@@ -8026,7 +8028,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '7–9 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/speaking/speaking-panel-discussion-three-speakers-01.jpg",
+                "src": siteImage("remote-work-marketing-planning.jpg"),
                 "alt": "Three speakers holding microphones at an event",
                 "caption": "Speaking session with three presenters",
                 "width": 2048,
@@ -8212,7 +8214,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-workshop-selfie-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok cho Vợ bán chân gà sốt thái (1).png"),
                 "alt": "Workshop room selfie with people at a table",
                 "caption": "Workshop working session",
                 "width": 1448,
@@ -8387,7 +8389,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-dinner-team-dinner-group-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok cho Vợ bán chân gà sốt thái (2).png"),
                 "alt": "Team group selfie at a restaurant table",
                 "caption": "Team meal group photo",
                 "width": 2560,
@@ -8577,7 +8579,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-dinner-restaurant-team-group-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok cho Vợ bán chân gà sốt thái (3).png"),
                 "alt": "Team members gathered around a restaurant table",
                 "caption": "Team dinner group photo",
                 "width": 2560,
@@ -8763,7 +8765,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/training-workshop/training-workshop-meeting-room-marketing-strategy-session-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok cho Vợ bán chân gà sốt thái (4).png"),
                 "alt": "Workshop room with a marketing strategy presentation",
                 "caption": "Marketing strategy workshop session",
                 "width": 1332,
@@ -8940,7 +8942,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/team-meeting/team-meeting-company-team-office-team-group-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok cho Vợ bán chân gà sốt thái (5).png"),
                 "alt": "Office team group photo",
                 "caption": "Office team group moment",
                 "width": 1280,
@@ -9129,7 +9131,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-outdoor-demo-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok cho Vợ bán chân gà sốt thái (6).png"),
                 "alt": "Outdoor exhibition booth activity",
                 "caption": "Exhibition booth activity",
                 "width": 2048,
@@ -9304,7 +9306,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-operations-warehouse-boxes-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok cho Vợ bán chân gà sốt thái (7).png"),
                 "alt": "Person beside stacked product boxes in a work area",
                 "caption": "Operations and product stock moment",
                 "width": 2048,
@@ -9480,7 +9482,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-team-backdrop-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok cho Vợ bán chân gà sốt thái (8).png"),
                 "alt": "Team posing in front of an exhibition backdrop",
                 "caption": "Exhibition team group photo",
                 "width": 2048,
@@ -9669,7 +9671,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-partnership-tablet-handoff-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok cho Vợ bán chân gà sốt thái (9).png"),
                 "alt": "Two people standing outdoors with a tablet",
                 "caption": "Work partnership moment",
                 "width": 2048,
@@ -9866,7 +9868,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-networking-night-waterfront-group-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok.jpg"),
                 "alt": "Small group standing at a night waterfront event",
                 "caption": "Night networking group photo",
                 "width": 2048,
@@ -10069,7 +10071,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-booth-crowd-01.jpg",
+                "src": siteImage("Case campaign camera hành trình GNET G-ON X - KOL Review Sản phẩm 2.jpg"),
                 "alt": "People gathered around an exhibition booth",
                 "caption": "Exhibition booth crowd",
                 "width": 2048,
@@ -10277,7 +10279,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-dinner-team-dinner-group-01.jpg",
+                "src": siteImage("Case campaign camera hành trình GNET G-ON X - KOL Review Sản phẩm.jpg"),
                 "alt": "Team group selfie at a restaurant table",
                 "caption": "Team meal group photo",
                 "width": 2560,
@@ -10467,7 +10469,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-dinner-restaurant-team-group-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte PR Coverage .jpg"),
                 "alt": "Team members gathered around a restaurant table",
                 "caption": "Team dinner group photo",
                 "width": 2560,
@@ -10665,7 +10667,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-operations-warehouse-boxes-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte booking review 3.jpg"),
                 "alt": "Person beside stacked product boxes in a work area",
                 "caption": "Operations and product stock moment",
                 "width": 2048,
@@ -10854,7 +10856,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-partnership-tablet-handoff-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte influencer review 4.jpg"),
                 "alt": "Two people standing outdoors with a tablet",
                 "caption": "Work partnership moment",
                 "width": 2048,
@@ -11040,7 +11042,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-stage-team-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte influencer review 5.jpg"),
                 "alt": "Team posing on an exhibition stage",
                 "caption": "Exhibition stage team photo",
                 "width": 2048,
@@ -11231,7 +11233,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-outdoor-event-walk-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte influencer review 6.jpg"),
                 "alt": "Person walking in an outdoor event area",
                 "caption": "Outdoor event moment",
                 "width": 2048,
@@ -11419,7 +11421,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-networking-restaurant-toast-01.jpg",
+                "src": siteImage("Case campaign camera hành trình blackvue 750 lte.jpg"),
                 "alt": "Group toasting at a crowded event table",
                 "caption": "Team networking toast",
                 "width": 2048,
@@ -11608,7 +11610,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-conference-conference-portrait-01.jpg",
+                "src": siteImage("Gnet G-ON X PR Campaign → Search Visibility.jpg"),
                 "alt": "Person standing in front of a conference backdrop",
                 "caption": "Conference portrait",
                 "width": 2048,
@@ -11793,7 +11795,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-product-demo-booth-01.jpg",
+                "src": siteImage("Gnet G-ON X review group.jpg"),
                 "alt": "People at an exhibition booth with product displays",
                 "caption": "Exhibition booth activity",
                 "width": 1600,
@@ -11978,7 +11980,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-outdoor-booth-01.jpg",
+                "src": siteImage("Influencer Review → Brand Awareness Blackvue.jpg"),
                 "alt": "Outdoor exhibition booth with visitors",
                 "caption": "Outdoor exhibition booth",
                 "width": 1920,
@@ -12168,7 +12170,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-booth-team-demo-01.jpg",
+                "src": siteImage("case-study-youtube-shorts-customer-testimonial-gonx.jpg"),
                 "alt": "Team members at an exhibition booth serving visitors",
                 "caption": "Exhibition booth team activity",
                 "width": 2048,
@@ -12349,7 +12351,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/speaking/speaking-panel-discussion-three-speakers-01.jpg",
+                "src": siteImage("meta-ads-multi-campaign-performance-management.jpg"),
                 "alt": "Three speakers holding microphones at an event",
                 "caption": "Speaking session with three presenters",
                 "width": 2048,
@@ -12530,7 +12532,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-internal-event-team-group-stage-01.jpg",
+                "src": siteImage("Optimize Craative & Tracking ads rẻ.jpg"),
                 "alt": "Large team group photo in an indoor venue",
                 "caption": "Team group photo at an indoor event",
                 "width": 2048,
@@ -12723,7 +12725,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-company-trip-night-group-photo-01.jpg",
+                "src": siteImage("Casestyudy sơn lại facebook ads mess + remarrketing.jpg"),
                 "alt": "Large group photo at a night event backdrop",
                 "caption": "Night event group photo",
                 "width": 2048,
@@ -12856,7 +12858,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-outdoor-demo-01.jpg",
+                "src": siteImage("Google Ads Search & Youtube Ads.jpg"),
                 "alt": "Outdoor exhibition booth activity",
                 "caption": "Exhibition booth activity",
                 "width": 2048,
@@ -12997,7 +12999,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/events/events-exhibition-team-backdrop-01.jpg",
+                "src": siteImage("pagespeed-optimization-heavy-elementor-website.jpg"),
                 "alt": "Team posing in front of an exhibition backdrop",
                 "caption": "Exhibition team group photo",
                 "width": 2048,
@@ -13136,7 +13138,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/content-media/content-media-growth-marketing-digital-vs-growth-01.jpg",
+                "src": siteImage("Camp Sơn Lại Sáng cũ chiều mới youtube ads conversions.jpg"),
                 "alt": "Infographic comparing digital marketing and growth marketing",
                 "caption": "Digital marketing versus growth marketing infographic",
                 "width": 1024,
@@ -13258,7 +13260,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8–10 phút đọc',
     media: {
           "coverImage": {
-                "src": "/images/media-library/company-work/company-work-team-group-formal-team-photo-01.jpg",
+                "src": siteImage("Case FnB Build kênh Tiktok.jpg"),
                 "alt": "Formal team group photo indoors",
                 "caption": "Formal team group photo",
                 "width": 958,
@@ -13387,6 +13389,19 @@ export const blogPosts: BlogPost[] = [
     cta: 'Nếu landing page có traffic nhưng khách ít để lại thông tin, đừng hỏi đầu tiên “nút CTA đã nổi chưa?”. Hãy hỏi offer có đủ rõ, có đúng stage khách, form có tương xứng với giá trị và sales có đủ context để tiếp nối lời hứa sau khi khách submit không?',
   },
 ];
+
+export const blogPosts: BlogPost[] = blogPostsSource.map((post) => ({
+  ...post,
+  ...(post.media
+    ? {
+        media: {
+          ...post.media,
+          coverImage: post.media.coverImage ? normalizeSiteImage(post.media.coverImage) : undefined,
+          inlineImages: post.media.inlineImages?.map((image) => normalizeSiteImage(image)),
+        },
+      }
+    : {}),
+}));
 
 export function getBlogPostBySlug(slug: string) {
   return blogPosts.find((post) => post.slug === slug);

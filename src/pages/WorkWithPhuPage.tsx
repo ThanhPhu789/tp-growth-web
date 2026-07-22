@@ -1,3 +1,4 @@
+import { siteImageData } from '../data/siteImages';
 import PlaceholderLayout from './PlaceholderLayout';
 
 export default function WorkWithPhuPage() {
@@ -9,6 +10,7 @@ export default function WorkWithPhuPage() {
       body="Hiện tại trang này dùng placeholder để giữ cấu trúc website. Form, Zalo, booking link và thông tin liên hệ thật sẽ được cập nhật sau."
       ctaLabel="Nhắn Zalo trao đổi nhanh"
       ctaLocation="work-with-phu"
+      heroImage={siteImageData('tp-growth-phu-profile-seated-black-polo-thumbs-up.jpg')}
       cards={[
         {
           title: 'Strategy Call 60 phút',

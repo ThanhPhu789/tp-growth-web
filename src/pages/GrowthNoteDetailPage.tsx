@@ -414,6 +414,8 @@ function GrowthNoteImage({ image, priority = false }: GrowthNoteImageProps) {
           width={image.width}
           height={image.height}
           loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
+          decoding="async"
           className={`h-auto max-h-[520px] w-full ${fitClass}`}
         />
       </div>

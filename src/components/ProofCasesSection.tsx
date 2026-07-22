@@ -1,4 +1,5 @@
-import { CheckCircle2, ImageIcon } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import { siteImageData } from '../data/siteImages';
 
 const cases = [
   {
@@ -7,6 +8,7 @@ const cases = [
     changes: ['Xây lại social/content', 'Chạy ads theo funnel', 'Setup tracking để đọc lead và chi phí'],
     evidence: 'Slot ảnh thật / dashboard / campaign sẽ cập nhật',
     tag: 'B2B → Retail engine',
+    image: siteImageData('Camp Sơn Lại Sáng cũ chiều mới youtube ads conversions.jpg'),
   },
   {
     title: 'Phụ kiện công nghệ',
@@ -14,6 +16,7 @@ const cases = [
     changes: ['Chuẩn hóa thông điệp', 'Tạo content chuyển đổi', 'Tối ưu ads theo dữ liệu'],
     evidence: 'Slot ảnh thật / video campaign sẽ cập nhật',
     tag: 'Retail growth',
+    image: siteImageData('paid-media facebook ads Blachvue dr750 lte.jpg'),
   },
   {
     title: 'F&B quy mô nhỏ',
@@ -21,6 +24,7 @@ const cases = [
     changes: ['Định hình offer', 'Dựng funnel đơn giản', 'Đọc kết quả theo đơn thật'],
     evidence: 'Slot ảnh thật / số liệu sẽ cập nhật',
     tag: 'Small budget test',
+    image: siteImageData('Case FnB Build kênh Tiktok.jpg'),
   },
 ];
 
@@ -41,11 +45,16 @@ export default function ProofCasesSection() {
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3 md:gap-6">
           {cases.map((item) => (
             <article key={item.title} className="rounded-[24px] border border-[#E2E8F0] bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-brand-soft md:p-6">
-              <div className="flex aspect-[16/9] items-center justify-center rounded-[16px] border border-dashed border-[#CBD5E1] bg-[#F8FAFC] text-center">
-                <div className="px-4 text-[#64748B]">
-                  <ImageIcon className="mx-auto h-5 w-5 text-[#1D4ED8]" />
-                  <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.12em]">Media proof slot</p>
-                </div>
+              <div className="aspect-[16/9] overflow-hidden rounded-[16px] border border-[#E2E8F0] bg-[#F8FAFC]">
+                <img
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  width={item.image.width}
+                  height={item.image.height}
+                  loading="lazy"
+                  decoding="async"
+                  className={`h-full w-full ${item.image.fit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                />
               </div>
               <span className="mt-5 inline-flex rounded-full border border-[#BFDBFE] bg-[#EFF6FF] px-2.5 py-1 text-[10px] font-bold text-[#1D4ED8]">{item.tag}</span>
               <h3 className="mt-4 font-heading text-[23px] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#0F172A]">{item.title}</h3>

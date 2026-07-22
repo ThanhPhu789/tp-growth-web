@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
 import { Users } from 'lucide-react';
+import { siteImageData } from '../data/siteImages';
 
 export default function StrategicVisual() {
+  const profileImage = siteImageData('tp-growth-phu-profile-standing-blue-shirt.jpg');
+
   return (
     <div className="relative w-full aspect-square md:aspect-auto md:h-[640px] flex items-center justify-center">
       {/* Background Glow - Subtle Accent */}
@@ -17,10 +20,14 @@ export default function StrategicVisual() {
           className="relative aspect-[4/5] overflow-hidden rounded-[60px_16px_60px_16px] md:rounded-[80px_20px_80px_20px] shadow-brand-soft border-[3px] md:border-4 border-white/80"
         >
           <img 
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" 
-            alt="TP Growth Advisor" 
-            className="w-full h-full object-cover grayscale brightness-110 contrast-[1.05]"
-            referrerPolicy="no-referrer"
+            src={profileImage.src}
+            alt={profileImage.alt}
+            width={profileImage.width}
+            height={profileImage.height}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            className="w-full h-full object-cover object-top brightness-[1.02] contrast-[1.02]"
           />
           {/* Subtle Color Grading Overlay */}
           <div className="absolute inset-0 bg-brand-accent/5 mix-blend-overlay" />

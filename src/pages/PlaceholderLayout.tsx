@@ -1,12 +1,14 @@
 import { ArrowRight } from 'lucide-react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import type { SiteImageData } from '../data/siteImages';
 
 type LinkCard = {
   title: string;
   text: string;
   href?: string;
   status?: string;
+  image?: SiteImageData;
 };
 
 type PlaceholderLayoutProps = {
@@ -18,6 +20,7 @@ type PlaceholderLayoutProps = {
   categories?: string[];
   ctaLabel?: string;
   ctaLocation?: string;
+  heroImage?: SiteImageData;
 };
 
 export default function PlaceholderLayout({
@@ -29,6 +32,7 @@ export default function PlaceholderLayout({
   categories = [],
   ctaLabel,
   ctaLocation,
+  heroImage,
 }: PlaceholderLayoutProps) {
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
@@ -36,7 +40,8 @@ export default function PlaceholderLayout({
       <main>
         <section className="py-14 md:py-20 lg:py-24">
           <div className="container mx-auto px-5 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-4xl">
+            <div className={`mx-auto ${heroImage ? 'grid max-w-6xl items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16' : 'max-w-4xl'}`}>
+              <div>
               <div className="mb-5 text-[10px] font-black uppercase tracking-[0.3em] text-[#EA580C] md:text-[11px] md:tracking-[0.4em]">
                 {eyebrow}
               </div>
@@ -60,6 +65,21 @@ export default function PlaceholderLayout({
                   <ArrowRight className="h-4 w-4" />
                 </a>
               )}
+              </div>
+              {heroImage && (
+                <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-[20px] border border-[#E2E8F0] bg-white shadow-sm">
+                  <img
+                    src={heroImage.src}
+                    alt={heroImage.alt}
+                    width={heroImage.width}
+                    height={heroImage.height}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="aspect-[4/5] h-full w-full object-cover object-top"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -72,6 +92,19 @@ export default function PlaceholderLayout({
                   {cards.map((card) => {
                     const content = (
                       <article className="h-full rounded-[20px] border border-[#E2E8F0] bg-white p-6 shadow-sm transition-colors hover:border-[#BFDBFE]">
+                        {card.image && (
+                          <div className="mb-5 aspect-[16/9] overflow-hidden rounded-[14px] border border-[#E2E8F0] bg-[#F8FAFC]">
+                            <img
+                              src={card.image.src}
+                              alt={card.image.alt}
+                              width={card.image.width}
+                              height={card.image.height}
+                              loading="lazy"
+                              decoding="async"
+                              className={`h-full w-full ${card.image.fit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                            />
+                          </div>
+                        )}
                         <div className="flex items-start justify-between gap-4">
                           <h2 className="font-heading text-[22px] font-extrabold tracking-[-0.03em] text-[#0F172A]">
                             {card.title}

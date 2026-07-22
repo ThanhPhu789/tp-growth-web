@@ -1,8 +1,11 @@
 import { motion } from 'motion/react';
 import { UserCheck } from 'lucide-react';
+import { siteImageData } from '../data/siteImages';
 import SystemArchitectureNode from './SystemAlignmentVisual';
 
 export default function Experience() {
+  const profileImage = siteImageData('tp-growth-phu-profile-seated-black-polo-thumbs-up.jpg');
+
   return (
     <div className="bg-brand-bg">
       {/* MỘT CHÚT VỀ PHÚ */}
@@ -16,10 +19,13 @@ export default function Experience() {
           >
             <div className="aspect-[4/5] bg-slate-200 rounded-[32px] md:rounded-[48px] overflow-hidden group-hover:shadow-[0_20px_60px_-15px_rgba(29,78,216,0.3)] transition-all duration-700 border-4 md:border-8 border-white relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop"
-                alt="Marketing Advisor"
-                className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
-                referrerPolicy="no-referrer"
+                src={profileImage.src}
+                alt={profileImage.alt}
+                width={profileImage.width}
+                height={profileImage.height}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover object-top scale-105 group-hover:scale-100 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-transparent to-transparent opacity-60" />
             </div>
