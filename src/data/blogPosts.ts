@@ -299,6 +299,7 @@ export type BlogPost = {
   slug: string;
   category: string;
   readingTime: string;
+  badge?: string;
   excerpt: string;
   media?: BlogPostMedia;
   content: BlogContentBlock[];
@@ -306,6 +307,17 @@ export type BlogPost = {
 };
 
 const blogPostsSource: BlogPost[] = [
+  {
+    title: 'Tôi không tin vào một công thức marketing cho mọi doanh nghiệp',
+    slug: 'toi-khong-tin-vao-mot-cong-thuc-marketing',
+    category: 'Growth System',
+    readingTime: '24–28 phút đọc',
+    badge: 'Bắt đầu từ đây',
+    excerpt:
+      'Không phải doanh nghiệp nào cũng cần KOL, PR, event hay hệ thống đa kênh. Growth bắt đầu từ việc hiểu business model, chọn đúng game, đúng đòn bẩy và xây một hệ thống vừa đủ để tạo ra kết quả.',
+    content: [],
+    cta: 'Bắt đầu từ business model, tìm đúng điểm nghẽn và chỉ xây những lớp hệ thống doanh nghiệp thực sự cần ở giai đoạn hiện tại.',
+  },
   {
     title: 'Doanh nghiệp không thiếu ads, họ thiếu hệ thống',
     slug: 'doanh-nghiep-khong-thieu-ads-ho-thieu-he-thong',

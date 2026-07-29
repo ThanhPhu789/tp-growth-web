@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { ArrowRight, Clock } from 'lucide-react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import {
+  START_HERE_GROWTH_NOTE_SLUG,
+  StartHereGrowthMosaic,
+} from '../components/growth-notes/StartHereGrowthNoteVisuals';
 import { blogPosts, type BlogPost } from '../data/blogPosts';
 
 const INITIAL_REMAINING_POSTS = 11;
@@ -24,7 +28,9 @@ function GrowthNoteCover({ post, featured = false }: GrowthNoteCardProps) {
       className={`block overflow-hidden rounded-[18px] border border-brand-border bg-brand-bg ${imageHeight}`}
       aria-label={post.title}
     >
-      {cover ? (
+      {post.slug === START_HERE_GROWTH_NOTE_SLUG ? (
+        <StartHereGrowthMosaic priority={featured} compact />
+      ) : cover ? (
         <img
           src={cover.src}
           alt={cover.alt}
@@ -51,7 +57,9 @@ function GrowthNoteCard({ post, featured = false }: GrowthNoteCardProps) {
         <GrowthNoteCover post={post} featured />
         <div className="flex flex-col justify-center p-3 sm:p-5 lg:p-8">
           <div className="flex flex-wrap items-center gap-3 text-[12px] font-bold text-brand-soft-text">
-            <span className="rounded-full bg-brand-accent-soft px-3 py-1.5 text-brand-accent">{post.category}</span>
+            <span className={`rounded-full px-3 py-1.5 ${post.badge ? 'bg-brand-highlight-soft text-brand-highlight' : 'bg-brand-accent-soft text-brand-accent'}`}>
+              {post.badge ?? post.category}
+            </span>
             <span className="inline-flex items-center gap-1.5">
               <Clock className="h-3.5 w-3.5" />
               {post.readingTime}

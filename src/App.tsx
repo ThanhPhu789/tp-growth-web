@@ -1,18 +1,13 @@
-import Hero from './components/Hero';
-import ProofStrip from './components/ProofStrip';
-import StorySection from './components/StorySection';
-import GrowthSystemSection from './components/GrowthSystemSection';
-import FourPillarsSection from './components/FourPillarsSection';
-import Services from './components/Services';
-import ProofCasesSection from './components/ProofCasesSection';
-import Method from './components/Method';
-import Experience from './components/Experience';
-import YoutubeSection from './components/YoutubeSection';
-import Footer from './components/Footer';
+import HomepageV2 from './components/homepage/HomepageV2';
 import GrowthSystemDetail from './pages/GrowthSystemDetail';
 import CaseStudyPage from './pages/CaseStudyPage';
+import BlackVueCaseStudyPage from './pages/BlackVueCaseStudyPage';
+import PaintMoreCaseStudyPage from './pages/PaintMoreCaseStudyPage';
+import GnetGonxCaseStudyPage from './pages/GnetGonxCaseStudyPage';
+import FnbTiktokCaseStudyPage from './pages/FnbTiktokCaseStudyPage';
 import GrowthNotesPage from './pages/GrowthNotesPage';
 import GrowthNoteDetailPage from './pages/GrowthNoteDetailPage';
+import StartHereGrowthNotePage from './pages/StartHereGrowthNotePage';
 import WorkWithPhuPage from './pages/WorkWithPhuPage';
 import { getBlogPostBySlug } from './data/blogPosts';
 
@@ -27,8 +22,28 @@ export default function App() {
     return <CaseStudyPage />;
   }
 
+  if (pathname === '/case-study/paint-and-more-growth-system') {
+    return <PaintMoreCaseStudyPage />;
+  }
+
+  if (pathname === '/case-study/blackvue-dr750-lte-growth-system') {
+    return <BlackVueCaseStudyPage />;
+  }
+
+  if (pathname === '/case-study/gnet-g-on-x-growth-system') {
+    return <GnetGonxCaseStudyPage />;
+  }
+
+  if (pathname === '/case-study/fnb-tiktok-sales-system') {
+    return <FnbTiktokCaseStudyPage />;
+  }
+
   if (pathname === '/growth-notes') {
     return <GrowthNotesPage />;
+  }
+
+  if (pathname === '/growth-notes/toi-khong-tin-vao-mot-cong-thuc-marketing') {
+    return <StartHereGrowthNotePage />;
   }
 
   if (pathname.startsWith('/growth-notes/')) {
@@ -44,19 +59,5 @@ export default function App() {
     return <WorkWithPhuPage />;
   }
 
-  return (
-    <div className="min-h-screen bg-white">
-      <Hero />
-      <ProofStrip />
-      <StorySection />
-      <GrowthSystemSection />
-      <FourPillarsSection />
-      <Services />
-      <ProofCasesSection />
-      <Method />
-      <Experience />
-      <YoutubeSection />
-      <Footer />
-    </div>
-  );
+  return <HomepageV2 />;
 }

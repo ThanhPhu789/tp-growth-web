@@ -17,7 +17,8 @@ export default function Header({ variant = 'page' }: HeaderProps) {
   const isHero = variant === 'hero';
 
   const navLinkClass = (href: string) => {
-    const isActive = pathname === normalizePath(href);
+    const normalizedHref = normalizePath(href);
+    const isActive = pathname === normalizedHref || (normalizedHref !== '/' && pathname.startsWith(`${normalizedHref}/`));
     return `text-[13px] font-bold transition-colors hover:text-[#1D4ED8] ${
       isActive ? 'text-[#1D4ED8] font-semibold' : 'text-[#334155]'
     }`;
