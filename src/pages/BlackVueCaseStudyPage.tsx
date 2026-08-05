@@ -671,7 +671,7 @@ export default function BlackVueCaseStudyPage() {
               <nav aria-label="Breadcrumb" className="mb-8 flex flex-wrap items-center gap-2 text-[12px] font-bold text-brand-soft-text">
                 <a
                   href="/case-study"
-                  className="rounded-sm transition-colors hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                  className="inline-flex min-h-11 items-center rounded-sm transition-colors hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent lg:min-h-0"
                 >
                   Case Study
                 </a>

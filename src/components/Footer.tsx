@@ -78,7 +78,7 @@ export default function Footer() {
                   href={link.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-brand-primary font-bold text-[13px] border border-brand-border hover:border-brand-accent hover:bg-brand-accent/5 transition-all py-2.5 px-4 rounded-full"
+                  className="flex min-h-11 items-center gap-2 text-brand-primary font-bold text-[13px] border border-brand-border hover:border-brand-accent hover:bg-brand-accent/5 transition-all py-2.5 px-4 rounded-full lg:min-h-0"
                 >
                   {link.icon}
                   {link.label}
@@ -92,8 +92,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between py-10 gap-6">
           <div className="text-brand-soft-text text-[12px] font-medium opacity-60">© 2026 TP GROWTH MARKETING. Bản quyền thuộc về tác giả.</div>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4">Bảo mật</a>
-            <a href="#" className="text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4">Điều khoản</a>
+            <a href="#" className="inline-flex min-h-11 items-center text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4 lg:min-h-0">Bảo mật</a>
+            <a href="#" className="inline-flex min-h-11 items-center text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4 lg:min-h-0">Điều khoản</a>
           </div>
           <div className="flex items-center gap-2 bg-brand-highlight/10 px-4 py-1.5 rounded-full">
             <div className="w-2 h-2 rounded-full bg-brand-highlight animate-pulse" />

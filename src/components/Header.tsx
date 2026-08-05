@@ -1,6 +1,8 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { navCta, navItems } from '../config/navigation';
+import { trackAnalyticsEvent } from '../lib/analytics/track';
+import { ANALYTICS_EVENT_VERSION, type AnalyticsPlacement } from '../lib/analytics/types';
 import TPLogo from './TPLogo';
 
 type HeaderProps = {
@@ -9,6 +11,18 @@ type HeaderProps = {
 
 function normalizePath(pathname: string) {
   return pathname.replace(/\/+$/, '') || '/';
+}
+
+function trackWorkWithPhuClick(placement: AnalyticsPlacement) {
+  trackAnalyticsEvent({
+    event: 'primary_cta_click',
+    event_version: ANALYTICS_EVENT_VERSION,
+    cta_name: 'work_with_phu',
+    placement,
+    component_name: 'header',
+    destination_path: '/lam-viec-voi-phu',
+    destination_type: 'internal_route',
+  });
 }
 
 export default function Header({ variant = 'page' }: HeaderProps) {
@@ -39,7 +53,12 @@ export default function Header({ variant = 'page' }: HeaderProps) {
 
         <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} className={navLinkClass(item.href)}>
+            <a
+              key={item.href}
+              href={item.href}
+              className={navLinkClass(item.href)}
+              onClick={item.href === '/lam-viec-voi-phu' ? () => trackWorkWithPhuClick('navbar') : undefined}
+            >
               {item.label}
             </a>
           ))}
@@ -74,6 +93,7 @@ export default function Header({ variant = 'page' }: HeaderProps) {
                 href={item.href}
                 className={`rounded-xl px-3 py-3 text-[15px] font-bold transition-colors hover:bg-[#F8FAFC] ${navLinkClass(item.href)}`}
                 onClick={() => setIsOpen(false)}
+                onClickCapture={item.href === '/lam-viec-voi-phu' ? () => trackWorkWithPhuClick('mobile_menu') : undefined}
               >
                 {item.label}
               </a>

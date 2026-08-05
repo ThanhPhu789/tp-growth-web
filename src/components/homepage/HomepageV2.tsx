@@ -28,6 +28,12 @@ import shortCover04 from '../../assets/homepage-v2/phu-marketing-short-04.jpg';
 import metaAdsEvidence from '../../assets/images/meta-ads-multi-campaign-performance-management.jpg';
 import googleAdsEvidence from '../../assets/images/Google Ads Search & Youtube Ads.jpg';
 import tikTokAdsEvidence from '../../assets/images/TikTok-Ads-multi-campaign-conversion-management.jpg';
+import { trackAnalyticsEvent } from '../../lib/analytics/track';
+import {
+  ANALYTICS_EVENT_VERSION,
+  type AnalyticsEventInput,
+  type AnalyticsPlacement,
+} from '../../lib/analytics/types';
 
 type SectionHeadingProps = {
   eyebrow: string;
@@ -301,14 +307,17 @@ function ArrowLink({
   href,
   children,
   tone = 'blue',
+  analyticsEvent,
 }: {
   href: string;
   children: ReactNode;
   tone?: 'blue' | 'orange';
+  analyticsEvent?: AnalyticsEventInput;
 }) {
   return (
     <a
       href={href}
+      onClick={analyticsEvent ? () => trackAnalyticsEvent(analyticsEvent) : undefined}
       className={`group inline-flex min-h-11 items-center gap-2 rounded-sm text-[14px] font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4 ${
         tone === 'orange'
           ? 'text-brand-highlight hover:text-orange-700'
@@ -319,6 +328,40 @@ function ArrowLink({
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
     </a>
   );
+}
+
+function homepageContentEvent(
+  contentType: 'growth_note' | 'case_study' | 'growth_system_framework' | 'content_hub',
+  contentId: string,
+  contentTitle: string,
+  placement: AnalyticsPlacement,
+  componentName: string,
+): AnalyticsEventInput {
+  return {
+    event: 'content_click',
+    event_version: ANALYTICS_EVENT_VERSION,
+    content_type: contentType,
+    content_id: contentId,
+    content_title: contentTitle,
+    placement,
+    component_name: componentName,
+  };
+}
+
+function homepageCtaEvent(
+  ctaName: string,
+  placement: AnalyticsPlacement,
+  componentName: string,
+): AnalyticsEventInput {
+  return {
+    event: 'primary_cta_click',
+    event_version: ANALYTICS_EVENT_VERSION,
+    cta_name: ctaName,
+    placement,
+    component_name: componentName,
+    destination_path: '/lam-viec-voi-phu',
+    destination_type: 'internal_route',
+  };
 }
 
 export default function HomepageV2() {
@@ -402,6 +445,7 @@ export default function HomepageV2() {
               <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
                 <a
                   href="/case-study"
+                  onClick={() => trackAnalyticsEvent(homepageContentEvent('content_hub', 'case-study', 'Case Study', 'hero', 'homepage_hero'))}
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-brand-button bg-brand-highlight px-7 py-3.5 text-[15px] font-bold text-white shadow-lg shadow-orange-600/15 transition-all hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-4"
                 >
                   Xem các hệ thống tôi đã xây
@@ -409,6 +453,7 @@ export default function HomepageV2() {
                 </a>
                 <a
                   href="/lam-viec-voi-phu"
+                  onClick={() => trackAnalyticsEvent(homepageCtaEvent('discuss_growth_bottleneck', 'hero', 'homepage_hero'))}
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-brand-button border border-brand-border bg-white px-7 py-3.5 text-[15px] font-bold text-brand-primary transition-colors hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4"
                 >
                   Trao đổi về điểm nghẽn
@@ -417,6 +462,7 @@ export default function HomepageV2() {
               </div>
               <a
                 href="/Growth-System-Framework"
+                onClick={() => trackAnalyticsEvent(homepageContentEvent('growth_system_framework', 'growth-system-framework', 'Growth System Framework', 'hero', 'homepage_hero'))}
                 className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-sm text-[14px] font-bold text-brand-accent underline decoration-blue-200 underline-offset-4 transition-colors hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4"
               >
                 Khám phá Growth System
@@ -569,7 +615,12 @@ export default function HomepageV2() {
                 title="Bốn bài toán. Bốn cấu trúc tăng trưởng khác nhau."
                 description="Không ép mọi doanh nghiệp vào một playbook. Mỗi hệ thống được thiết kế quanh market, offer, customer journey và năng lực vận hành thật."
               />
-              <ArrowLink href="/case-study">Xem toàn bộ Case Study</ArrowLink>
+              <ArrowLink
+                href="/case-study"
+                analyticsEvent={homepageContentEvent('content_hub', 'case-study', 'Case Study', 'body', 'homepage_case_studies')}
+              >
+                Xem toàn bộ Case Study
+              </ArrowLink>
             </div>
 
             <div className="mt-14 divide-y divide-brand-border border-y border-brand-border">
@@ -577,6 +628,7 @@ export default function HomepageV2() {
                 <a
                   key={item.href}
                   href={item.href}
+                  onClick={() => trackAnalyticsEvent(homepageContentEvent('case_study', item.href.split('/').pop() ?? item.href, item.name, 'card', 'homepage_case_study_list'))}
                   className={`group grid gap-6 transition-colors hover:bg-brand-section sm:px-5 lg:items-center lg:gap-10 ${
                     item.featured
                       ? 'py-11 lg:grid-cols-[56px_minmax(0,1fr)_minmax(400px,480px)]'
@@ -744,7 +796,10 @@ export default function HomepageV2() {
                   </div>
                 ))}
                 <div className="mt-7">
-                  <ArrowLink href="/Growth-System-Framework">
+                  <ArrowLink
+                    href="/Growth-System-Framework"
+                    analyticsEvent={homepageContentEvent('growth_system_framework', 'growth-system-framework', 'Growth System Framework', 'body', 'homepage_system_map')}
+                  >
                     Đi sâu vào Growth System Framework
                   </ArrowLink>
                 </div>
@@ -768,6 +823,7 @@ export default function HomepageV2() {
             <div className="mt-14 grid gap-5 lg:grid-cols-12">
               <a
                 href="/case-study/paint-and-more-growth-system"
+                onClick={() => trackAnalyticsEvent(homepageContentEvent('case_study', 'paint-and-more-growth-system', 'Paint & More / OneCoat', 'card', 'homepage_proof_grid'))}
                 className="group overflow-hidden rounded-[20px] border border-brand-border bg-brand-section focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4 lg:col-span-7"
               >
                 <div className="aspect-[2048/989] overflow-hidden bg-white">
@@ -791,6 +847,7 @@ export default function HomepageV2() {
               <div className="grid gap-5 lg:col-span-5">
                 <a
                   href="/case-study/blackvue-dr750-lte-growth-system"
+                  onClick={() => trackAnalyticsEvent(homepageContentEvent('case_study', 'blackvue-dr750-lte-growth-system', 'BlackVue DR750 LTE', 'card', 'homepage_proof_grid'))}
                   className="group overflow-hidden rounded-[20px] border border-brand-border bg-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4 sm:grid sm:min-h-[220px] sm:grid-cols-[0.95fr_1.05fr]"
                 >
                   <img
@@ -811,6 +868,7 @@ export default function HomepageV2() {
                 </a>
                 <a
                   href="/case-study/gnet-g-on-x-growth-system"
+                  onClick={() => trackAnalyticsEvent(homepageContentEvent('case_study', 'gnet-g-on-x-growth-system', 'GNET G-ON X', 'card', 'homepage_proof_grid'))}
                   className="group overflow-hidden rounded-[20px] border border-brand-border bg-brand-highlight-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-4 sm:grid sm:min-h-[220px] sm:grid-cols-[1.05fr_0.95fr]"
                 >
                   <div className="flex flex-col justify-end p-5 sm:p-6">
@@ -1080,7 +1138,11 @@ export default function HomepageV2() {
                   nghiệp như bốn trò chơi tăng trưởng riêng biệt.
                 </p>
                 <div className="mt-8">
-                  <ArrowLink href="/growth-notes/toi-khong-tin-vao-mot-cong-thuc-marketing" tone="orange">
+                  <ArrowLink
+                    href="/growth-notes/toi-khong-tin-vao-mot-cong-thuc-marketing"
+                    tone="orange"
+                    analyticsEvent={homepageContentEvent('growth_note', 'toi-khong-tin-vao-mot-cong-thuc-marketing', 'Tôi không tin vào một công thức marketing cho mọi doanh nghiệp', 'card', 'homepage_featured_growth_note')}
+                  >
                     Đọc bài trụ cột
                   </ArrowLink>
                 </div>
@@ -1127,7 +1189,10 @@ export default function HomepageV2() {
                 có thể vấn đề không nằm ở một chiến dịch riêng lẻ.
               </p>
               <div className="mt-5">
-                <ArrowLink href="/Growth-System-Framework">
+                <ArrowLink
+                  href="/Growth-System-Framework"
+                  analyticsEvent={homepageContentEvent('growth_system_framework', 'growth-system-framework', 'Growth System Framework', 'body', 'homepage_fit_check')}
+                >
                   Xem cách tôi rà một Growth System
                 </ArrowLink>
               </div>
@@ -1193,7 +1258,12 @@ export default function HomepageV2() {
                 ))}
               </div>
               <div className="mt-9">
-                <ArrowLink href="/lam-viec-voi-phu">Tìm hiểu cách làm việc cùng Phú</ArrowLink>
+                <ArrowLink
+                  href="/lam-viec-voi-phu"
+                  analyticsEvent={homepageCtaEvent('learn_how_to_work_with_phu', 'body', 'homepage_about_phu')}
+                >
+                  Tìm hiểu cách làm việc cùng Phú
+                </ArrowLink>
               </div>
             </div>
           </div>
@@ -1252,6 +1322,7 @@ export default function HomepageV2() {
                       </dl>
                       <a
                         href="/lam-viec-voi-phu"
+                        onClick={() => trackAnalyticsEvent(homepageCtaEvent(`work_with_phu_${way.number}`, 'card', 'homepage_ways_to_work'))}
                         className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-sm text-[14px] font-bold text-brand-accent transition-colors hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4"
                       >
                         {way.cta}
@@ -1288,6 +1359,7 @@ export default function HomepageV2() {
               <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
                 <a
                   href="/Growth-System-Framework"
+                  onClick={() => trackAnalyticsEvent(homepageContentEvent('growth_system_framework', 'growth-system-framework', 'Growth System Framework', 'cta_section', 'homepage_final_cta'))}
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-brand-button bg-brand-highlight px-7 py-3.5 text-[15px] font-bold text-white shadow-lg shadow-orange-600/15 transition-colors hover:bg-orange-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-4"
                 >
                   Xem Growth System Framework
@@ -1295,6 +1367,7 @@ export default function HomepageV2() {
                 </a>
                 <a
                   href="/lam-viec-voi-phu"
+                  onClick={() => trackAnalyticsEvent(homepageCtaEvent('work_with_phu', 'cta_section', 'homepage_final_cta'))}
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-brand-button border border-brand-border bg-white px-7 py-3.5 text-[15px] font-bold text-brand-primary transition-colors hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4"
                 >
                   <MessageCircle className="h-5 w-5 text-brand-accent" />
@@ -1359,6 +1432,7 @@ export default function HomepageV2() {
           <div className="mx-auto grid max-w-md grid-cols-[1fr_auto] gap-2">
             <a
               href="/lam-viec-voi-phu"
+              onClick={() => trackAnalyticsEvent(homepageCtaEvent('growth_system_audit', 'mobile_sticky', 'homepage_mobile_actions'))}
               className="inline-flex min-h-11 items-center justify-center rounded-brand-button bg-brand-highlight px-5 py-2.5 text-[14px] font-bold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
               aria-label="Trao đổi về Growth System Audit"
             >
@@ -1366,6 +1440,7 @@ export default function HomepageV2() {
             </a>
             <a
               href="/lam-viec-voi-phu"
+              onClick={() => trackAnalyticsEvent(homepageCtaEvent('work_with_phu', 'mobile_sticky', 'homepage_mobile_actions'))}
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-brand-button border border-brand-border bg-white px-4 py-2.5 text-[14px] font-bold text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
               aria-label="Nhắn Zalo với Phú"
             >

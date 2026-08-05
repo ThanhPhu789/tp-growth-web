@@ -7,6 +7,8 @@ import {
   StartHereGrowthMosaic,
 } from '../components/growth-notes/StartHereGrowthNoteVisuals';
 import { blogPosts, type BlogPost } from '../data/blogPosts';
+import { trackAnalyticsEvent } from '../lib/analytics/track';
+import { ANALYTICS_EVENT_VERSION } from '../lib/analytics/types';
 
 const INITIAL_REMAINING_POSTS = 11;
 const POSTS_PER_LOAD = 12;
@@ -17,6 +19,18 @@ type GrowthNoteCardProps = {
   key?: string;
 };
 
+function trackGrowthNoteClick(post: BlogPost) {
+  trackAnalyticsEvent({
+    event: 'content_click',
+    event_version: ANALYTICS_EVENT_VERSION,
+    content_type: 'growth_note',
+    content_id: post.slug,
+    content_title: post.title,
+    placement: 'card',
+    component_name: 'growth_note_card',
+  });
+}
+
 function GrowthNoteCover({ post, featured = false }: GrowthNoteCardProps) {
   const cover = post.media?.coverImage;
   const imageHeight = featured ? 'h-full min-h-[260px] lg:min-h-[360px]' : 'h-48 sm:h-52';
@@ -25,6 +39,7 @@ function GrowthNoteCover({ post, featured = false }: GrowthNoteCardProps) {
   return (
     <a
       href={`/growth-notes/${post.slug}`}
+      onClick={() => trackGrowthNoteClick(post)}
       className={`block overflow-hidden rounded-[18px] border border-brand-border bg-brand-bg ${imageHeight}`}
       aria-label={post.title}
     >
@@ -66,13 +81,14 @@ function GrowthNoteCard({ post, featured = false }: GrowthNoteCardProps) {
             </span>
           </div>
           <h2 className="mt-5 font-heading text-[30px] font-extrabold leading-[1.12] tracking-[-0.035em] text-brand-primary md:text-[42px]">
-            <a href={`/growth-notes/${post.slug}`} className="transition-colors hover:text-brand-accent">
+            <a href={`/growth-notes/${post.slug}`} onClick={() => trackGrowthNoteClick(post)} className="transition-colors hover:text-brand-accent">
               {post.title}
             </a>
           </h2>
           <p className="mt-5 text-[16px] font-medium leading-[1.75] text-brand-secondary md:text-[18px]">{post.excerpt}</p>
           <a
             href={`/growth-notes/${post.slug}`}
+            onClick={() => trackGrowthNoteClick(post)}
             className="mt-7 inline-flex w-fit items-center gap-2 rounded-brand-button bg-brand-highlight px-5 py-3 text-[14px] font-bold text-white shadow-brand-soft transition-colors hover:bg-brand-accent"
           >
             Đọc Growth Note
@@ -97,6 +113,7 @@ function GrowthNoteCard({ post, featured = false }: GrowthNoteCardProps) {
         <h3 className="mt-4 font-heading text-[21px] font-extrabold leading-[1.22] tracking-[-0.025em] text-brand-primary">
           <a
             href={`/growth-notes/${post.slug}`}
+            onClick={() => trackGrowthNoteClick(post)}
             className="transition-colors hover:text-brand-accent [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical] overflow-hidden"
           >
             {post.title}
@@ -107,6 +124,7 @@ function GrowthNoteCard({ post, featured = false }: GrowthNoteCardProps) {
         </p>
         <a
           href={`/growth-notes/${post.slug}`}
+          onClick={() => trackGrowthNoteClick(post)}
           className="mt-auto inline-flex w-fit items-center gap-2 pt-5 text-[13px] font-bold text-brand-accent transition-colors hover:text-brand-highlight"
         >
           Đọc Growth Note

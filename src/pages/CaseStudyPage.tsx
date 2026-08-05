@@ -5,11 +5,25 @@ import { siteImageData } from '../data/siteImages';
 import blackVueFeaturedImage from '../assets/case-studies/blackvue/blackvue-hung-lam-facebook-review.jpg';
 import gnetGonxFeaturedImage from '../assets/images/Case campaign camera hành trình GNET G-ON X - KOL Review Sản phẩm.jpg';
 import fnbTiktokFeaturedImage from '../assets/images/Case FnB Build kênh Tiktok.jpg';
+import { trackAnalyticsEvent } from '../lib/analytics/track';
+import { ANALYTICS_EVENT_VERSION } from '../lib/analytics/types';
 
 const featuredImage = siteImageData('Casestyudy sơn lại facebook ads mess + remarrketing.jpg');
 const blackVueImage = { src: blackVueFeaturedImage, width: 1199, height: 824 };
 const gnetGonxImage = { src: gnetGonxFeaturedImage, width: 1207, height: 900 };
 const fnbTiktokImage = { src: fnbTiktokFeaturedImage, width: 1124, height: 900 };
+
+function trackCaseStudyClick(contentId: string, contentTitle: string) {
+  trackAnalyticsEvent({
+    event: 'content_click',
+    event_version: ANALYTICS_EVENT_VERSION,
+    content_type: 'case_study',
+    content_id: contentId,
+    content_title: contentTitle,
+    placement: 'card',
+    component_name: 'case_study_index',
+  });
+}
 
 export default function CaseStudyPage() {
   return (
@@ -40,6 +54,7 @@ export default function CaseStudyPage() {
             <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-2">
               <a
                 href="/case-study/paint-and-more-growth-system"
+                onClick={() => trackCaseStudyClick('paint-and-more-growth-system', 'Paint & More / OneCoat')}
                 className="group block rounded-[20px] border border-brand-border bg-white p-5 shadow-brand-soft transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4 sm:p-7 lg:col-span-2"
                 aria-label="Xem case study Paint & More / OneCoat"
               >
@@ -89,6 +104,7 @@ export default function CaseStudyPage() {
 
               <a
                 href="/case-study/blackvue-dr750-lte-growth-system"
+                onClick={() => trackCaseStudyClick('blackvue-dr750-lte-growth-system', 'BlackVue DR750 LTE')}
                 className="group block rounded-[20px] border border-brand-border bg-white p-5 shadow-brand-soft transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4 sm:p-7 lg:col-span-2"
                 aria-label="Xem case study BlackVue DR750 LTE"
               >
@@ -139,6 +155,7 @@ export default function CaseStudyPage() {
 
               <a
                 href="/case-study/gnet-g-on-x-growth-system"
+                onClick={() => trackCaseStudyClick('gnet-g-on-x-growth-system', 'GNET G-ON X')}
                 className="group block rounded-[20px] border border-brand-border bg-white p-5 shadow-brand-soft transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4 sm:p-7 lg:col-span-2"
                 aria-label="Xem case study GNET G-ON X trong hệ sinh thái Msport"
               >
@@ -187,6 +204,7 @@ export default function CaseStudyPage() {
 
               <a
                 href="/case-study/fnb-tiktok-sales-system"
+                onClick={() => trackCaseStudyClick('fnb-tiktok-sales-system', 'F&B TikTok Sales System')}
                 className="group block rounded-[20px] border border-brand-border bg-white p-5 shadow-brand-soft transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4 sm:p-7 lg:col-span-2"
                 aria-label="Xem case study F&B TikTok Sales System"
               >

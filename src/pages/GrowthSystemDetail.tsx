@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { trackAnalyticsEvent } from '../lib/analytics/track';
+import { ANALYTICS_EVENT_VERSION } from '../lib/analytics/types';
 
 type SectionIntroProps = {
   label: string;
@@ -978,6 +980,15 @@ export default function GrowthSystemDetail() {
                     </p>
                     <a
                       href={caseItem.href}
+                      onClick={() => trackAnalyticsEvent({
+                        event: 'content_click',
+                        event_version: ANALYTICS_EVENT_VERSION,
+                        content_type: 'case_study',
+                        content_id: caseItem.href.split('/').pop() ?? caseItem.href,
+                        content_title: caseItem.name,
+                        placement: 'card',
+                        component_name: 'growth_system_case_study',
+                      })}
                       aria-label={`Xem Case Study ${caseItem.name}`}
                       className="mt-6 inline-flex min-h-11 items-center gap-2 text-[14px] font-bold text-brand-highlight underline decoration-orange-200 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-4"
                     >
@@ -1077,7 +1088,19 @@ export default function GrowthSystemDetail() {
                 điểm thất thoát lớn nhanh hơn.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="/lam-viec-voi-phu" className={primaryLinkClass}>
+                <a
+                  href="/lam-viec-voi-phu"
+                  className={primaryLinkClass}
+                  onClick={() => trackAnalyticsEvent({
+                    event: 'primary_cta_click',
+                    event_version: ANALYTICS_EVENT_VERSION,
+                    cta_name: 'work_with_phu',
+                    placement: 'cta_section',
+                    component_name: 'growth_system_final_cta',
+                    destination_path: '/lam-viec-voi-phu',
+                    destination_type: 'internal_route',
+                  })}
+                >
                   Trao đổi về điểm nghẽn
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
