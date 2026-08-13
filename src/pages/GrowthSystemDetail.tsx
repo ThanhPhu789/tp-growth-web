@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode } from 'react';
 import {
+  ArrowDown,
   ArrowRight,
   CheckCircle2,
   ChevronRight,
@@ -939,6 +940,87 @@ export default function GrowthSystemDetail() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Growth bridge */}
+        <section className="border-b border-brand-border bg-white py-20 sm:py-24 lg:py-28">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="overflow-hidden rounded-[24px] border border-brand-border bg-brand-section p-6 shadow-brand-soft sm:p-8 lg:p-12">
+              <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+                <div>
+                  <Eyebrow>AI AS EXECUTION LAYER</Eyebrow>
+                  <h2 className="mt-4 font-heading text-[34px] font-extrabold leading-[1.08] tracking-[-0.035em] text-brand-primary sm:text-[42px] lg:text-[48px]">
+                    Framework giữ hướng.
+                    <span className="block text-brand-accent">
+                      AI mở rộng khả năng triển khai.
+                    </span>
+                  </h2>
+                  <div className="mt-6 space-y-4 text-[15px] leading-[1.75] text-brand-secondary sm:text-[16px]">
+                    <p>
+                      Growth System giúp xác định business đang nghẽn ở đâu, cần sửa gì
+                      trước và thứ tự ưu tiên.
+                    </p>
+                    <p>
+                      Khi hướng đi đã rõ, AI có thể hỗ trợ biến quyết định đó thành
+                      website, hệ thống nội dung, tracking và workflow vận hành nhanh hơn
+                      — nhưng con người vẫn giữ quyền đánh giá và quyết định.
+                    </p>
+                  </div>
+                </div>
+
+                <ol className="grid gap-2 rounded-[20px] border border-brand-border bg-white p-5 sm:p-7">
+                  {[
+                    ['Growth System', 'Direction & priority'],
+                    ['BUILD', 'Digital foundation'],
+                    ['SCALE', 'Search & content systems'],
+                    ['OPERATE', 'Marketing intelligence'],
+                    ['Business Impact', 'Learning & decisions'],
+                  ].map(([title, detail], index, steps) => (
+                    <li key={title} className="text-center">
+                      <div className={`rounded-[14px] border px-4 py-3 ${
+                        index === 0 || index === steps.length - 1
+                          ? 'border-brand-accent/20 bg-brand-accent-soft'
+                          : 'border-brand-border bg-white'
+                      }`}>
+                        <p className="text-[12px] font-extrabold tracking-[0.12em] text-brand-accent">
+                          {title}
+                        </p>
+                        <p className="mt-1 text-[12px] font-semibold text-brand-secondary">
+                          {detail}
+                        </p>
+                      </div>
+                      {index < steps.length - 1 && (
+                        <ArrowDown className="mx-auto my-1 h-4 w-4 text-brand-soft-text" aria-hidden="true" />
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="mt-10 flex flex-col gap-6 border-t border-brand-border pt-8 sm:flex-row sm:items-center sm:justify-between">
+                <p className="font-heading text-[20px] font-extrabold leading-[1.45] tracking-[-0.025em] text-brand-primary sm:text-[22px]">
+                  AI xử lý sự lặp lại.
+                  <span className="block text-brand-accent">Con người giữ hướng đi.</span>
+                </p>
+                <a
+                  href="/ai-growth"
+                  className={primaryLinkClass}
+                  onClick={() => trackAnalyticsEvent({
+                    event: 'primary_cta_click',
+                    event_version: ANALYTICS_EVENT_VERSION,
+                    cta_name: 'view_ai_growth_systems',
+                    placement: 'body',
+                    component_name: 'growth_system_ai_bridge',
+                    destination_path: '/ai-growth',
+                    destination_type: 'internal_route',
+                  })}
+                >
+                  Xem các hệ thống AI đã triển khai
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
               </div>
             </div>
           </div>

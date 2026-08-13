@@ -11,6 +11,7 @@ import GrowthNotesPage from './pages/GrowthNotesPage';
 import GrowthNoteDetailPage from './pages/GrowthNoteDetailPage';
 import StartHereGrowthNotePage from './pages/StartHereGrowthNotePage';
 import WorkWithPhuPage from './pages/WorkWithPhuPage';
+import AIGrowthPage from './pages/AIGrowthPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { getBlogPostBySlug } from './data/blogPosts';
 
@@ -29,6 +30,10 @@ export default function App() {
 
   if (pathname === '/Growth-System-Framework') {
     return renderIndexablePage(<GrowthSystemDetail />);
+  }
+
+  if (pathname === '/ai-growth') {
+    return renderIndexablePage(<AIGrowthPage />);
   }
 
   if (pathname === '/case-study') {

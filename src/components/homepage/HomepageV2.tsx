@@ -3,9 +3,12 @@ import {
   Check,
   ChevronRight,
   CircleDot,
+  Code2,
   ExternalLink,
   Layers3,
   MessageCircle,
+  SearchCheck,
+  MonitorCheck,
   Play,
   Quote,
 } from 'lucide-react';
@@ -190,6 +193,35 @@ const architectureLayers = [
     number: '06',
     title: 'Sales, revenue & learning loop',
     description: 'Đưa outcome quay lại marketing để hệ thống biết điều gì cần giữ, sửa hoặc dừng.',
+  },
+];
+
+const aiGrowthSystems = [
+  {
+    number: '01',
+    label: 'BUILD',
+    title: 'Website + Nền tảng đo lường',
+    description: 'Xây digital property và measurement foundation ngay từ đầu.',
+    chips: ['Website', 'Design System', 'GA4 / GSC', 'GTM'],
+    icon: Code2,
+  },
+  {
+    number: '02',
+    label: 'SCALE',
+    title: 'pSEO + Technical SEO',
+    description:
+      'Dùng AI + structured data + automation để scale search/content có kiểm soát.',
+    chips: ['pSEO Factory', 'Media Pipeline', 'Internal Linking', 'Technical SEO'],
+    icon: SearchCheck,
+  },
+  {
+    number: '03',
+    label: 'OPERATE',
+    title: 'Marketing Intelligence',
+    description:
+      'Thu thập → tổng hợp → quan sát → hỗ trợ người vận hành ra quyết định.',
+    chips: ['Automated Reports', 'Google Ads Monitor', 'Telegram', 'Attribution'],
+    icon: MonitorCheck,
   },
 ];
 
@@ -804,6 +836,93 @@ export default function HomepageV2() {
                   </ArrowLink>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Growth execution layer */}
+        <section className="border-y border-brand-border bg-white py-20 sm:py-24 lg:py-28">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-20">
+              <div>
+                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-accent">
+                  AI GROWTH
+                </p>
+                <h2 className="mt-4 font-heading text-[34px] font-extrabold leading-[1.08] tracking-[-0.035em] text-brand-primary sm:text-[42px] lg:text-[52px]">
+                  AI không thay thế
+                  <span className="block">tư duy tăng trưởng.</span>
+                  <span className="mt-2 block text-brand-accent">
+                    Nó mở rộng khả năng triển khai.
+                  </span>
+                </h2>
+                <p className="mt-6 max-w-xl text-[16px] leading-[1.75] text-brand-secondary sm:text-[17px]">
+                  AI tại TP Growth không phải một kho prompt. Đây là lớp triển khai giúp
+                  build tài sản số, scale nội dung và vận hành marketing với dữ liệu rõ
+                  hơn, nhanh hơn và đều hơn.
+                </p>
+                <p className="mt-6 border-l-2 border-brand-accent pl-4 text-[14px] font-bold leading-[1.6] text-brand-primary">
+                  3 lớp ứng dụng AI trong hệ thống
+                  <span className="mt-1 block text-[11px] uppercase tracking-[0.14em] text-brand-soft-text">
+                    Build • Scale • Operate
+                  </span>
+                </p>
+                <a
+                  href="/ai-growth"
+                  onClick={() => trackAnalyticsEvent({
+                    event: 'primary_cta_click',
+                    event_version: ANALYTICS_EVENT_VERSION,
+                    cta_name: 'view_ai_growth',
+                    placement: 'body',
+                    component_name: 'homepage_ai_growth',
+                    destination_path: '/ai-growth',
+                    destination_type: 'internal_route',
+                  })}
+                  className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-brand-button bg-brand-highlight px-6 py-3.5 text-[15px] font-bold text-white shadow-lg shadow-orange-600/15 transition-colors hover:bg-orange-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-4"
+                >
+                  Xem AI Growth
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
+
+              <ol className="relative grid gap-4 before:absolute before:bottom-10 before:left-5 before:top-10 before:w-px before:bg-brand-border sm:before:left-6">
+                {aiGrowthSystems.map((system) => {
+                  const SystemIcon = system.icon;
+                  return (
+                    <li
+                      key={system.number}
+                      className="relative grid grid-cols-[40px_minmax(0,1fr)] gap-4 rounded-[20px] border border-brand-border bg-white p-5 shadow-brand-soft sm:grid-cols-[48px_minmax(0,1fr)] sm:gap-5 sm:p-6"
+                    >
+                      <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent-soft text-[11px] font-extrabold text-brand-accent sm:h-12 sm:w-12">
+                        {system.number}
+                      </span>
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-3">
+                          <span className="text-[11px] font-extrabold tracking-[0.16em] text-brand-highlight">
+                            {system.label}
+                          </span>
+                          <SystemIcon className="h-4 w-4 text-brand-accent" aria-hidden="true" />
+                        </div>
+                        <h3 className="mt-2 font-heading text-[20px] font-extrabold tracking-[-0.025em] text-brand-primary sm:text-[22px]">
+                          {system.title}
+                        </h3>
+                        <p className="mt-2 text-[14px] leading-[1.7] text-brand-secondary sm:text-[15px]">
+                          {system.description}
+                        </p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {system.chips.map((chip) => (
+                            <span
+                              key={chip}
+                              className="rounded-full border border-brand-border bg-brand-section px-3 py-1.5 text-[11px] font-bold text-brand-secondary"
+                            >
+                              {chip}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
             </div>
           </div>
         </section>

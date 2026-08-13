@@ -1,6 +1,7 @@
 export const STATIC_PUBLIC_ROUTES = [
   '/',
   '/Growth-System-Framework',
+  '/ai-growth',
   '/case-study',
   '/growth-notes',
   '/lam-viec-voi-phu',
