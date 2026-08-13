@@ -397,6 +397,20 @@ function homepageCtaEvent(
   };
 }
 
+function homepageZaloContactEvent(
+  placement: AnalyticsPlacement,
+  componentName: string,
+): AnalyticsEventInput {
+  return {
+    event: 'contact_click',
+    event_version: ANALYTICS_EVENT_VERSION,
+    contact_method: 'zalo',
+    placement,
+    component_name: componentName,
+    destination_type: 'contact_channel',
+  };
+}
+
 export default function HomepageV2() {
   const [showMobileActions, setShowMobileActions] = useState(false);
 
@@ -1489,7 +1503,7 @@ export default function HomepageV2() {
                   href={contactLinks.zalo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackAnalyticsEvent(homepageCtaEvent('work_with_phu', 'cta_section', 'homepage_final_cta'))}
+                  onClick={() => trackAnalyticsEvent(homepageZaloContactEvent('cta_section', 'homepage_final_cta'))}
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-brand-button border border-brand-border bg-white px-7 py-3.5 text-[15px] font-bold text-brand-primary transition-colors hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4"
                 >
                   <MessageCircle className="h-5 w-5 text-brand-accent" />
@@ -1564,7 +1578,7 @@ export default function HomepageV2() {
               href={contactLinks.zalo}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackAnalyticsEvent(homepageCtaEvent('work_with_phu', 'mobile_sticky', 'homepage_mobile_actions'))}
+              onClick={() => trackAnalyticsEvent(homepageZaloContactEvent('mobile_sticky', 'homepage_mobile_actions'))}
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-brand-button border border-brand-border bg-white px-4 py-2.5 text-[14px] font-bold text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
               aria-label="Nhắn Zalo với Phú"
             >
