@@ -11,7 +11,14 @@ export const navItems: NavItem[] = [
   { label: 'Làm việc với Phú', href: '/lam-viec-voi-phu' },
 ];
 
+export const contactLinks = {
+  zalo: 'https://zalo.me/0766911958',
+  facebook: 'https://www.facebook.com/your.phanthanhphu',
+  email: 'mailto:phanthanhphu789@gmail.com',
+  phone: 'tel:0766911958',
+};
+
 export const navCta = {
   label: 'Nhắn Zalo',
-  href: '#',
+  href: contactLinks.zalo,
 };

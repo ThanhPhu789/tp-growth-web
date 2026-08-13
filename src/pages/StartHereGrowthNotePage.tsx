@@ -539,7 +539,9 @@ export default function StartHereGrowthNotePage() {
                   </a>
                   <a
                     href={navCta.href}
-                    data-cta="zalo-placeholder"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-cta="zalo"
                     data-location="start-here-growth-note"
                     className="inline-flex min-h-11 items-center justify-center text-[14px] font-extrabold text-brand-highlight underline decoration-orange-300 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-4"
                   >

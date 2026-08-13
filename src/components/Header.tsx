@@ -66,7 +66,9 @@ export default function Header({ variant = 'page' }: HeaderProps) {
 
         <a
           href={navCta.href}
-          data-cta="zalo-placeholder"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cta="zalo"
           data-location="navbar"
           className="hidden min-h-11 items-center justify-center rounded-brand-button bg-[#EA580C] px-5 py-2.5 text-[14px] font-bold text-white shadow-lg shadow-orange-600/15 transition-all hover:brightness-105 lg:inline-flex"
         >
@@ -100,7 +102,9 @@ export default function Header({ variant = 'page' }: HeaderProps) {
             ))}
             <a
               href={navCta.href}
-              data-cta="zalo-placeholder"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="zalo"
               data-location="mobile-menu"
               className="mt-2 inline-flex min-h-12 items-center justify-center rounded-brand-button bg-[#EA580C] px-5 py-3 text-[15px] font-bold text-white shadow-lg shadow-orange-600/15"
               onClick={() => setIsOpen(false)}

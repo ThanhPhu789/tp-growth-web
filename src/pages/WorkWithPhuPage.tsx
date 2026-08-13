@@ -119,6 +119,8 @@ export default function WorkWithPhuPage() {
                 <div className="mt-8">
                   <a
                     href={navCta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     data-cta="zalo"
                     data-location="work-with-phu-hero"
                     className={ctaClassName}
@@ -196,6 +198,8 @@ export default function WorkWithPhuPage() {
                     <div className="md:col-start-2 lg:col-start-auto lg:self-end">
                       <a
                         href={navCta.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         data-cta="zalo"
                         data-location={`work-with-phu-${offer.number}`}
                         className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-brand-button bg-brand-highlight px-5 py-3 text-center text-[14px] font-bold text-white transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-4 sm:w-auto"
@@ -283,6 +287,8 @@ export default function WorkWithPhuPage() {
                 </div>
                 <a
                   href={navCta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-cta="zalo"
                   data-location="work-with-phu-final"
                   className={ctaClassName}

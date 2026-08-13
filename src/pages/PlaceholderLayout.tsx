@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { contactLinks } from '../config/navigation';
 import type { SiteImageData } from '../data/siteImages';
 
 type LinkCard = {
@@ -56,8 +57,10 @@ export default function PlaceholderLayout({
               </p>
               {ctaLabel && (
                 <a
-                  href="#"
-                  data-cta="zalo-placeholder"
+                  href={contactLinks.zalo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="zalo"
                   data-location={ctaLocation}
                   className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-brand-button bg-[#EA580C] px-6 py-3.5 text-[15px] font-bold text-white shadow-lg shadow-orange-600/15 transition-all hover:brightness-105"
                 >

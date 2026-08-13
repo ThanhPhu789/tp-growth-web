@@ -931,6 +931,7 @@ export default function FnbTiktokCaseStudyPage() {
                     href={navCta.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-cta="zalo"
                     data-location="fnb-tiktok-case-study"
                     className="inline-flex min-h-11 items-center justify-center rounded-xl border border-white/25 px-5 py-3 text-[14px] font-extrabold text-white transition hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-primary motion-reduce:transform-none"
                   >

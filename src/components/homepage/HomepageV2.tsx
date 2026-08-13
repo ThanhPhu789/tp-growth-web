@@ -15,6 +15,7 @@ import {
 import { useEffect, useState, type ReactNode } from 'react';
 import Header from '../Header';
 import TPLogo from '../TPLogo';
+import { contactLinks } from '../../config/navigation';
 import paintMoreImage from '../../assets/case-studies/paint-and-more/paintandmore-website-new-onecoat.png';
 import blackVueImage from '../../assets/case-studies/blackvue/blackvue-hung-lam-facebook-review.jpg';
 import gnetPaidImage from '../../assets/case-studies/gnet-gonx/gonx-paid-content-wall-01.jpg';
@@ -1485,7 +1486,9 @@ export default function HomepageV2() {
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="/lam-viec-voi-phu"
+                  href={contactLinks.zalo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => trackAnalyticsEvent(homepageCtaEvent('work_with_phu', 'cta_section', 'homepage_final_cta'))}
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-brand-button border border-brand-border bg-white px-7 py-3.5 text-[15px] font-bold text-brand-primary transition-colors hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4"
                 >
@@ -1558,7 +1561,9 @@ export default function HomepageV2() {
               Trao đổi Audit
             </a>
             <a
-              href="/lam-viec-voi-phu"
+              href={contactLinks.zalo}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => trackAnalyticsEvent(homepageCtaEvent('work_with_phu', 'mobile_sticky', 'homepage_mobile_actions'))}
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-brand-button border border-brand-border bg-white px-4 py-2.5 text-[14px] font-bold text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
               aria-label="Nhắn Zalo với Phú"

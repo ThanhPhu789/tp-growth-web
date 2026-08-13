@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, MessageCircle, Mail, Facebook } from 'lucide-react';
+import { contactLinks } from '../config/navigation';
 import TPLogo from './TPLogo';
 
 export default function Footer() {
@@ -29,14 +30,28 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
-              <button className="flex min-h-12 items-center justify-center gap-3 rounded-brand-button bg-brand-highlight px-7 py-3.5 text-[16px] font-bold text-white shadow-xl shadow-brand-highlight/25 transition-all hover:brightness-105 active:scale-95 md:px-9 md:py-4 md:text-[17px]">
+              <a
+                href={contactLinks.zalo}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cta="zalo"
+                data-location="footer-primary"
+                className="flex min-h-12 items-center justify-center gap-3 rounded-brand-button bg-brand-highlight px-7 py-3.5 text-[16px] font-bold text-white shadow-xl shadow-brand-highlight/25 transition-all hover:brightness-105 active:scale-95 md:px-9 md:py-4 md:text-[17px]"
+              >
                 Trao đổi về điểm nghẽn
                 <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="group flex min-h-12 items-center justify-center gap-3 rounded-brand-button border border-brand-border bg-white px-7 py-3.5 text-[16px] font-bold text-brand-primary transition-all hover:bg-slate-50 md:px-8 md:py-4 md:text-[17px]">
+              </a>
+              <a
+                href={contactLinks.zalo}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cta="zalo"
+                data-location="footer-secondary"
+                className="group flex min-h-12 items-center justify-center gap-3 rounded-brand-button border border-brand-border bg-white px-7 py-3.5 text-[16px] font-bold text-brand-primary transition-all hover:bg-slate-50 md:px-8 md:py-4 md:text-[17px]"
+              >
                  <MessageCircle className="w-6 h-6 text-[#0068FF] group-hover:scale-110 transition-transform" />
                  Nhắn Zalo trao đổi
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -69,15 +84,15 @@ export default function Footer() {
             <span className="text-[12px] font-bold text-brand-primary uppercase tracking-[0.2em] opacity-60">Kết nối với Phú</span>
             <div className="flex flex-wrap justify-center lg:justify-end gap-3 w-full">
               {[
-                { icon: <MessageCircle className="w-4 h-4" />, label: 'Zalo', url: '#' },
-                { icon: <Facebook className="w-4 h-4" />, label: 'Facebook', url: '#' },
-                { icon: <Mail className="w-4 h-4" />, label: 'Email', url: '#' }
+                { icon: <MessageCircle className="w-4 h-4" />, label: 'Zalo', url: contactLinks.zalo, external: true },
+                { icon: <Facebook className="w-4 h-4" />, label: 'Facebook', url: contactLinks.facebook, external: true },
+                { icon: <Mail className="w-4 h-4" />, label: 'Email', url: contactLinks.email, external: false }
               ].map((link, i) => (
                 <a 
                   key={i} 
                   href={link.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
                   className="flex min-h-11 items-center gap-2 text-brand-primary font-bold text-[13px] border border-brand-border hover:border-brand-accent hover:bg-brand-accent/5 transition-all py-2.5 px-4 rounded-full lg:min-h-0"
                 >
                   {link.icon}
@@ -92,8 +107,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between py-10 gap-6">
           <div className="text-brand-soft-text text-[12px] font-medium opacity-60">© 2026 TP GROWTH MARKETING. Bản quyền thuộc về tác giả.</div>
           <div className="flex items-center gap-6">
-            <a href="#" className="inline-flex min-h-11 items-center text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4 lg:min-h-0">Bảo mật</a>
-            <a href="#" className="inline-flex min-h-11 items-center text-brand-soft-text text-[12px] hover:text-brand-primary underline underline-offset-4 lg:min-h-0">Điều khoản</a>
+            <span className="inline-flex min-h-11 items-center text-brand-soft-text text-[12px] lg:min-h-0">Bảo mật</span>
+            <span className="inline-flex min-h-11 items-center text-brand-soft-text text-[12px] lg:min-h-0">Điều khoản</span>
           </div>
           <div className="flex items-center gap-2 bg-brand-highlight/10 px-4 py-1.5 rounded-full">
             <div className="w-2 h-2 rounded-full bg-brand-highlight animate-pulse" />

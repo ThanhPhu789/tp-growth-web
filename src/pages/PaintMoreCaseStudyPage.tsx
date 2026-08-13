@@ -1804,7 +1804,9 @@ export default function PaintMoreCaseStudyPage() {
                 </a>
                 <a
                   href={navCta.href}
-                  data-cta="zalo-placeholder"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="zalo"
                   data-location="case-study-detail"
                   className="inline-flex min-h-12 items-center justify-center rounded-brand-button border border-brand-border bg-white px-6 py-3.5 text-[15px] font-bold text-brand-primary transition hover:border-blue-300 hover:bg-brand-accent-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4"
                 >
