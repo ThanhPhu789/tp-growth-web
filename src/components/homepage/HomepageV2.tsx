@@ -439,43 +439,39 @@ export default function HomepageV2() {
           id="hero"
           className="relative scroll-mt-24 overflow-hidden border-b border-brand-border bg-white"
         >
-          <div className="container mx-auto grid min-h-[700px] items-center gap-12 px-5 py-16 sm:px-6 md:py-20 lg:grid-cols-[minmax(0,1.2fr)_minmax(340px,0.8fr)] lg:px-8 lg:py-24">
+          <div aria-hidden="true" className="hero-tech-grid pointer-events-none absolute inset-0 hidden lg:block" />
+          <div className="container relative z-10 mx-auto grid min-h-[700px] items-center gap-12 px-5 py-16 sm:px-6 md:py-20 lg:min-h-[calc(100svh-88px)] lg:grid-cols-[minmax(0,1.2fr)_minmax(340px,0.8fr)] lg:gap-10 lg:px-8 lg:py-6">
             <div className="max-w-4xl">
-              <p className="mb-7 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.2em] text-brand-accent">
+              <p className="mb-7 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.2em] text-brand-accent lg:mb-4">
                 <span className="h-2 w-2 rounded-full bg-brand-highlight" />
                 Growth System Operator for SME
               </p>
-              <h1 className="text-balance font-heading text-[42px] font-extrabold leading-[1.16] tracking-[-0.045em] text-brand-primary sm:text-[54px] sm:leading-[1.12] lg:text-[66px] lg:leading-[1.16]">
-                Traffic có thể tăng. Lead có thể nhiều.
+              <h1 className="text-balance font-heading text-[42px] font-extrabold leading-[1.16] tracking-[-0.045em] text-brand-primary sm:text-[54px] sm:leading-[1.12] lg:text-[42px] lg:leading-[1.24] lg:tracking-[-0.01em] lg:[word-spacing:0.04em] xl:text-[46px]">
+                Traffic tăng. Lead có thể nhiều.
                 <span className="mt-2 block text-brand-accent">
                   Tăng trưởng vẫn đứng yên nếu cả hệ thống không cùng tạo ra chuyển đổi.
                 </span>
               </h1>
-              <div className="mt-9 border-l-4 border-brand-highlight pl-5 sm:pl-7">
-                <p className="font-heading text-[21px] font-extrabold leading-[1.45] tracking-[-0.02em] text-brand-primary sm:text-[24px]">
-                  Lead nhiều không chứng minh marketing đang tốt.
+              <div className="mt-9 border-l-4 border-brand-highlight pl-5 sm:pl-7 lg:mt-6 lg:pl-5">
+                <p className="font-heading text-[21px] font-extrabold leading-[1.45] tracking-[-0.02em] text-brand-primary sm:text-[24px] lg:text-[20px] lg:leading-[1.45] lg:tracking-normal">
+                  Lead nhiều chưa chứng minh marketing hiệu quả.
                   <span className="block text-brand-highlight">
-                    Nó chỉ chứng minh đầu phễu đang hoạt động.
+                    Điểm nghẽn thường nằm ở đoạn sau.
                   </span>
                 </p>
               </div>
-              <p className="mt-6 max-w-3xl text-[15px] leading-[1.75] text-brand-secondary sm:text-[16px]">
-                Nếu Ads ngày càng đắt, lead vẫn vào nhưng báo giá xong khách im lặng,
-                vấn đề thường không nằm riêng ở một kênh.
-              </p>
-              <p className="mt-5 max-w-3xl text-[17px] leading-[1.8] text-brand-secondary sm:text-[18px]">
-                Tôi giúp SME tìm và gỡ các điểm đứt gãy từ market, content và paid
-                media đến website, tracking và sales — trước khi tiếp tục tăng ngân
-                sách hoặc scale.
+              <p className="mt-5 max-w-3xl text-[17px] leading-[1.8] text-brand-secondary sm:text-[18px] lg:mt-2 lg:text-[16px] lg:leading-[1.6]">
+                Tôi giúp SME tìm và gỡ điểm đứt gãy trong offer, website, tracking
+                và sales — trước khi tiếp tục tăng ngân sách hoặc scale.
               </p>
 
-              <div className="mt-7 inline-flex max-w-full items-center gap-3 rounded-full border border-brand-border bg-brand-section py-2 pl-2 pr-4">
+              <div className="mt-7 inline-flex max-w-full items-center gap-3 rounded-full border border-brand-border bg-brand-section py-2 pl-2 pr-4 lg:mt-3 lg:py-1.5">
                 <img
                   src={phuPortrait}
                   alt="Phan Thành Phú"
                   width="1707"
                   height="2560"
-                  className="h-12 w-12 shrink-0 rounded-full object-cover object-[50%_18%]"
+                  className="h-12 w-12 shrink-0 rounded-full object-cover object-[50%_18%] lg:h-10 lg:w-10"
                   loading="eager"
                   decoding="async"
                 />
@@ -489,7 +485,7 @@ export default function HomepageV2() {
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center lg:mt-4">
                 <a
                   href="/case-study"
                   onClick={() => trackAnalyticsEvent(homepageContentEvent('content_hub', 'case-study', 'Case Study', 'hero', 'homepage_hero'))}
@@ -510,36 +506,42 @@ export default function HomepageV2() {
               <a
                 href="/Growth-System-Framework"
                 onClick={() => trackAnalyticsEvent(homepageContentEvent('growth_system_framework', 'growth-system-framework', 'Growth System Framework', 'hero', 'homepage_hero'))}
-                className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-sm text-[14px] font-bold text-brand-accent underline decoration-blue-200 underline-offset-4 transition-colors hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4"
+                className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-sm text-[14px] font-bold text-brand-accent underline decoration-blue-200 underline-offset-4 transition-colors hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-4 lg:mt-1 lg:min-h-9"
               >
                 Khám phá Growth System
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
 
-            <aside className="relative mx-auto w-full max-w-[480px] lg:mx-0 lg:justify-self-end">
-              <div className="rounded-[20px] border border-brand-border bg-brand-section p-6 shadow-[0_24px_60px_rgba(15,23,42,0.08)] sm:p-8">
-                <div className="flex items-center justify-between border-b border-brand-border pb-5">
+            <aside className="relative mx-auto w-full max-w-[480px] lg:mx-0 lg:max-w-[440px] lg:justify-self-end">
+              <div className="rounded-[20px] border border-brand-border bg-brand-section p-6 shadow-[0_24px_60px_rgba(15,23,42,0.08)] sm:p-8 lg:p-6">
+                <div className="flex items-center justify-between border-b border-brand-border pb-5 lg:pb-4">
                   <span className="text-[12px] font-bold uppercase tracking-[0.18em] text-brand-soft-text">
                     The revenue gap
                   </span>
                   <CircleDot className="h-5 w-5 text-brand-highlight" />
                 </div>
-                <div className="space-y-0 py-4">
+                <div className="space-y-0 py-4 lg:py-2">
                   {['Traffic', 'Lead', 'Sales conversation', 'Revenue'].map(
                     (stage, index) => (
-                      <div key={stage} className="flex items-center gap-4">
+                      <div key={stage} className="revenue-stage flex items-center gap-4" style={{ animationDelay: `${index * 1.2}s` }}>
                         <div className="flex w-8 flex-col items-center self-stretch">
                           <span
-                            className={`mt-5 h-3 w-3 rounded-full border-2 ${
+                            aria-hidden="true"
+                            style={{ animationDelay: `${index * 1.2}s` }}
+                            className={`revenue-node mt-5 h-3 w-3 shrink-0 rounded-full border-2 lg:mt-4 ${
                               index === 2
-                                ? 'border-brand-highlight bg-brand-highlight-soft'
+                                ? 'revenue-node-gap border-brand-highlight bg-brand-highlight-soft'
                                 : 'border-brand-accent bg-white'
                             }`}
                           />
-                          {index < 3 && <span className="mt-1 w-px flex-1 bg-brand-border" />}
+                          {index < 3 && (
+                            <span aria-hidden="true" className="revenue-connector relative mt-1 w-px flex-1 bg-brand-border">
+                              <span className={`revenue-packet ${index === 2 ? 'revenue-packet-gap' : ''}`} style={{ animationDelay: `${index * 1.2 + 0.4}s` }} />
+                            </span>
+                          )}
                         </div>
-                        <div className="flex-1 border-b border-brand-border py-5 last:border-0">
+                        <div className="flex-1 border-b border-brand-border py-5 last:border-0 lg:py-3.5">
                           <p className="font-heading text-[18px] font-extrabold text-brand-primary">
                             {stage}
                           </p>
@@ -553,7 +555,7 @@ export default function HomepageV2() {
                     ),
                   )}
                 </div>
-                <p className="border-t border-brand-border pt-5 text-[15px] leading-[1.7] text-brand-secondary">
+                <p className="border-t border-brand-border pt-5 text-[15px] leading-[1.7] text-brand-secondary lg:pt-4 lg:text-[14px] lg:leading-[1.6]">
                   Tối ưu một mắt xích không thể bù cho một hệ thống đang truyền sai
                   tín hiệu.
                 </p>

@@ -42,3 +42,80 @@
   background-size: 200% 200%;
   animation: slow-flow 15s ease infinite;
 }
+
+@keyframes hero-grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 48px 0, 0 48px; }
+}
+
+.hero-tech-grid {
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 78% 42%, black 0%, transparent 68%);
+  opacity: 0.55;
+  animation: hero-grid-drift 18s linear infinite;
+}
+
+/* One six-second sequence follows the signal through the four stages. */
+.revenue-stage {
+  border-radius: 12px;
+  animation: revenue-stage-light 6s ease-in-out infinite;
+}
+
+.revenue-node {
+  --signal-color: var(--color-brand-accent);
+  animation: revenue-node-light 6s ease-in-out infinite;
+}
+
+.revenue-node-gap {
+  --signal-color: var(--color-brand-highlight);
+}
+
+.revenue-packet {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 3px;
+  height: 35%;
+  border-radius: 999px;
+  background: var(--color-brand-accent);
+  box-shadow: 0 0 8px var(--color-brand-accent);
+  opacity: 0;
+  animation: revenue-packet-flow 6s linear infinite;
+}
+
+.revenue-packet-gap {
+  background: var(--color-brand-highlight);
+  box-shadow: 0 0 8px var(--color-brand-highlight);
+}
+
+@keyframes revenue-stage-light {
+  0%, 24%, 100% { background-color: transparent; }
+  6%, 16% { background-color: var(--color-brand-accent-soft); }
+}
+
+@keyframes revenue-node-light {
+  0%, 24%, 100% { box-shadow: 0 0 0 0 transparent; }
+  6%, 16% {
+    background-color: var(--signal-color);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--signal-color) 15%, transparent);
+  }
+}
+
+@keyframes revenue-packet-flow {
+  0% { opacity: 0; transform: translateY(0); }
+  3% { opacity: 1; }
+  18% { opacity: 1; transform: translateY(180%); }
+  22%, 100% { opacity: 0; transform: translateY(185%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-tech-grid,
+  .revenue-stage,
+  .revenue-node,
+  .revenue-packet {
+    animation: none;
+  }
+}
