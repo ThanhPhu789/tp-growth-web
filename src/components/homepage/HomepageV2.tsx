@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useState, type ReactNode } from 'react';
 import Header from '../Header';
+import GrowthSystemSection from './GrowthSystemSection';
 import TPLogo from '../TPLogo';
 import { contactLinks } from '../../config/navigation';
 import paintMoreImage from '../../assets/case-studies/paint-and-more/paintandmore-website-new-onecoat.png';
@@ -590,67 +591,8 @@ export default function HomepageV2() {
           </div>
         </section>
 
-        {/* 2. Revenue Gap */}
-        <section
-          id="revenue-gap"
-          className="scroll-mt-24 bg-brand-section py-20 sm:py-24 lg:py-28"
-        >
-          <div className="container mx-auto px-5 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="02 · The Revenue Gap"
-              title="Đầu phễu có thể đang thắng. Nhưng điểm nghẽn thường nằm ở đoạn sau."
-              description="Ads có thể hoạt động. Content có thể viral. Lead có thể nhiều. Nhưng cơ hội vẫn có thể dừng lại ở Offer, Price, Proof, Sales hoặc Delivery."
-            />
-
-            <div className="mt-12 rounded-[20px] border border-brand-border bg-white p-5 shadow-[0_16px_40px_rgba(15,23,42,0.04)] sm:p-8">
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-4">
-                {[
-                  'Traffic',
-                  'Lead',
-                  'Offer',
-                  'Báo giá',
-                  'Sales follow-up',
-                  'Giao giá trị',
-                  'Doanh thu',
-                  'Khách quay lại',
-                ].map((stage, index, stages) => (
-                  <div key={stage} className="flex items-center gap-2">
-                    <span
-                      className={`inline-flex min-h-11 items-center rounded-full border px-4 py-2 text-[13px] font-bold ${
-                        ['Offer', 'Báo giá', 'Sales follow-up'].includes(stage)
-                          ? 'border-orange-200 bg-brand-highlight-soft text-brand-highlight'
-                          : 'border-blue-200 bg-brand-accent-soft text-brand-accent'
-                      }`}
-                    >
-                      {stage}
-                    </span>
-                    {index < stages.length - 1 && (
-                      <ArrowRight className="h-4 w-4 shrink-0 text-brand-soft-text" />
-                    )}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 grid gap-6 border-t border-brand-border pt-7 md:grid-cols-2 md:gap-10">
-                <p className="text-[16px] leading-[1.75] text-brand-secondary">
-                  Không mặc định một bộ phận đang làm sai. Mục tiêu là xác định mắt
-                  xích nào đang giới hạn toàn bộ dòng chảy và phản hồi nào chưa quay
-                  lại đúng nơi.
-                </p>
-                <blockquote className="border-l-4 border-brand-highlight pl-5 font-heading text-[20px] font-extrabold leading-[1.5] tracking-[-0.02em] text-brand-primary">
-                  Marketing tạo cơ hội. Cả hệ thống quyết định cơ hội có biến thành
-                  doanh thu hay không.
-                </blockquote>
-              </div>
-            </div>
-
-            <p className="mt-10 max-w-4xl font-heading text-[26px] font-extrabold leading-[1.35] tracking-[-0.03em] text-brand-primary sm:text-[32px]">
-              Một mắt xích có thể thắng.{' '}
-              <span className="text-brand-accent">
-                Chỉ cả hệ thống mới tạo ra tăng trưởng.
-              </span>
-            </p>
-          </div>
-        </section>
+        {/* 2. Connected Growth System */}
+        <GrowthSystemSection />
 
         {/* 3. Four Games · Four Growth Systems */}
         <section
