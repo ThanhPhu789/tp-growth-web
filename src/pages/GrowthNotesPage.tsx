@@ -149,7 +149,7 @@ export default function GrowthNotesPage() {
           <div className="container mx-auto px-5 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
               <p className="text-[11px] font-black uppercase tracking-[0.35em] text-brand-highlight">Field notes</p>
-              <h1 className="mt-5 font-heading text-[42px] font-extrabold leading-[1.05] tracking-[-0.04em] sm:text-[52px] md:text-[64px]">
+              <h1 className="mt-5 font-heading text-[42px] font-extrabold leading-[1.2] tracking-[-0.04em] sm:text-[52px] md:text-[64px]">
                 Growth Notes
               </h1>
               <p className="mt-6 max-w-3xl text-[18px] font-medium leading-[1.75] text-brand-secondary md:text-[20px]">

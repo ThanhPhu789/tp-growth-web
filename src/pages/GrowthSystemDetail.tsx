@@ -422,7 +422,7 @@ export default function GrowthSystemDetail() {
           <div className="container mx-auto grid items-center gap-12 px-5 sm:px-6 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:gap-16 lg:px-8">
             <div className="max-w-3xl">
               <Eyebrow>TP GROWTH REVENUE SYSTEM™</Eyebrow>
-              <h1 className="font-heading text-[40px] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-primary sm:text-[48px] lg:text-[58px]">
+              <h1 className="font-heading text-[40px] font-extrabold leading-[1.2] tracking-[-0.04em] text-brand-primary sm:text-[48px] lg:text-[58px]">
                 Tăng trưởng không thường gãy ở một kênh.
                 <span className="mt-2 block text-brand-accent">
                   Nó gãy ở khoảng trống giữa các lớp của hệ thống.

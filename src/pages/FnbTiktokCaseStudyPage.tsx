@@ -352,7 +352,7 @@ export default function FnbTiktokCaseStudyPage() {
                 <p className="mt-5 text-[14px] font-extrabold tracking-[0.08em] text-brand-accent">
                   F&B TIKTOK SALES SYSTEM
                 </p>
-                <h1 className="mt-4 font-heading text-[41px] font-extrabold leading-[1.03] tracking-[-0.045em] sm:text-[50px] md:text-[60px] lg:text-[66px]">
+                <h1 className="mt-4 font-heading text-[41px] font-extrabold leading-[1.2] tracking-[-0.045em] sm:text-[50px] md:text-[60px] lg:text-[66px]">
                   Một kênh thắng có thể đủ cho một business nhỏ
                 </h1>
                 <p className="mt-6 max-w-2xl text-[16px] font-medium leading-[1.78] text-brand-secondary md:text-[18px]">

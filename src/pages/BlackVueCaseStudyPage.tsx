@@ -683,7 +683,7 @@ export default function BlackVueCaseStudyPage() {
                 <div>
                   <Eyebrow>CASE STUDY 02 · PREMIUM AUTO TECH GROWTH SYSTEM</Eyebrow>
                   <p className="text-[15px] font-extrabold text-brand-accent">BlackVue DR750 LTE</p>
-                  <h1 className="mt-4 font-heading text-[40px] font-extrabold leading-[1.03] tracking-[-0.045em] sm:text-[48px] md:text-[56px] lg:text-[62px]">
+                  <h1 className="mt-4 font-heading text-[40px] font-extrabold leading-[1.2] tracking-[-0.045em] sm:text-[48px] md:text-[56px] lg:text-[62px]">
                     Từ thương hiệu mạnh trong kênh đại lý đến hệ thống tạo nhu cầu trực tiếp cho phân khúc xe sang
                   </h1>
                   <p className="mt-6 max-w-3xl text-[17px] font-medium leading-[1.75] text-brand-secondary md:text-[19px]">

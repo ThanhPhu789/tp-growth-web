@@ -767,7 +767,7 @@ export default function PaintMoreCaseStudyPage() {
                 <div>
                   <Eyebrow>CASE STUDY 01 · B2B → RETAIL GROWTH SYSTEM</Eyebrow>
                   <p className="text-[15px] font-extrabold text-brand-accent">Paint & More / OneCoat</p>
-                  <h1 className="mt-4 font-heading text-[40px] font-extrabold leading-[1.03] tracking-[-0.045em] sm:text-[48px] md:text-[56px] lg:text-[62px]">
+                  <h1 className="mt-4 font-heading text-[40px] font-extrabold leading-[1.2] tracking-[-0.045em] sm:text-[48px] md:text-[56px] lg:text-[62px]">
                     Từ doanh nghiệp mạnh về B2B đến hệ thống tăng trưởng bán lẻ đa kênh
                   </h1>
                   <p className="mt-6 max-w-3xl text-[17px] font-medium leading-[1.75] text-brand-secondary md:text-[19px]">

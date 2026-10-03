@@ -447,7 +447,7 @@ export default function HomepageV2() {
                 <span className="h-2 w-2 rounded-full bg-brand-highlight" />
                 Growth System Operator for SME
               </p>
-              <h1 className="text-balance font-heading text-[42px] font-extrabold leading-[1.16] tracking-[-0.045em] text-brand-primary sm:text-[54px] sm:leading-[1.12] lg:text-[42px] lg:leading-[1.24] lg:tracking-[-0.01em] lg:[word-spacing:0.04em] xl:text-[46px]">
+              <h1 className="text-balance font-heading text-[42px] font-extrabold leading-[1.24] tracking-[-0.045em] text-brand-primary sm:text-[54px] sm:leading-[1.24] lg:text-[42px] lg:leading-[1.24] lg:tracking-[-0.01em] lg:[word-spacing:0.04em] xl:text-[46px]">
                 Traffic tăng. Lead có thể nhiều.
                 <span className="mt-2 block text-brand-accent">
                   Tăng trưởng vẫn đứng yên nếu cả hệ thống không cùng tạo ra chuyển đổi.

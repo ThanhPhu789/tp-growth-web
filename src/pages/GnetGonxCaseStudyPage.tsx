@@ -519,7 +519,7 @@ export default function GnetGonxCaseStudyPage() {
                 <p className="mt-5 text-[14px] font-extrabold tracking-[0.08em] text-brand-highlight">
                   GNET G-ON X × MSPORT
                 </p>
-                <h1 className="mt-4 font-heading text-[39px] font-extrabold leading-[1.04] tracking-[-0.045em] sm:text-[48px] md:text-[58px] lg:text-[64px]">
+                <h1 className="mt-4 font-heading text-[39px] font-extrabold leading-[1.2] tracking-[-0.045em] sm:text-[48px] md:text-[58px] lg:text-[64px]">
                   Từ một sản phẩm mới đến hệ thống tạo niềm tin đa kênh trong thị trường camera hành trình
                 </h1>
                 <p className="mt-6 max-w-2xl text-[16px] font-medium leading-[1.78] text-brand-secondary md:text-[18px]">

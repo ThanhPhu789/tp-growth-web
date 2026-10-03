@@ -105,7 +105,7 @@ export default function WorkWithPhuPage() {
                 <p className="mb-5 text-[10px] font-black uppercase tracking-[0.3em] text-brand-highlight md:text-[11px] md:tracking-[0.4em]">
                   WORK WITH PHU
                 </p>
-                <h1 className="font-heading text-[40px] font-extrabold leading-[1.04] tracking-[-0.04em] text-brand-primary sm:text-[48px] md:text-[58px]">
+                <h1 className="font-heading text-[40px] font-extrabold leading-[1.2] tracking-[-0.04em] text-brand-primary sm:text-[48px] md:text-[58px]">
                   Làm việc với Phú
                 </h1>
                 <p className="mt-6 max-w-3xl text-[18px] font-semibold leading-[1.7] text-brand-secondary md:text-[21px]">

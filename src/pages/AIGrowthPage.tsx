@@ -263,7 +263,7 @@ export default function AIGrowthPage() {
           <div className="container mx-auto px-5 sm:px-6 lg:px-8">
             <div className="max-w-5xl">
               <Eyebrow>AI GROWTH</Eyebrow>
-              <h1 className="mt-5 font-heading text-[40px] font-extrabold leading-[1.05] tracking-[-0.04em] text-brand-primary sm:text-[52px] lg:text-[68px]">
+              <h1 className="mt-5 font-heading text-[40px] font-extrabold leading-[1.2] tracking-[-0.04em] text-brand-primary sm:text-[52px] lg:text-[68px]">
                 AI không thay thế tư duy tăng trưởng.
                 <span className="mt-2 block text-brand-accent">
                   Nó biến tư duy đúng thành khả năng triển khai lớn hơn.

@@ -4,6 +4,7 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Manrope", sans-serif;
+  --leading-heading-safe: 1.2;
   
   --color-brand-bg: #F8FAFC;
   --color-brand-surface: #FFFFFF;
@@ -30,6 +31,11 @@
   body {
     @apply bg-brand-bg text-brand-primary font-sans antialiased;
   }
+}
+
+/* Keep Vietnamese marks clear when editorial headings wrap onto multiple lines. */
+:where(h2, h3, h4).font-heading {
+  line-height: var(--leading-heading-safe);
 }
 
 @keyframes slow-flow {

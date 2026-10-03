@@ -446,7 +446,7 @@ export default function StartHereGrowthNotePage() {
 
                 <div className="mt-8 max-w-5xl">
                   <Eyebrow>GROWTH NOTE · START HERE</Eyebrow>
-                  <h1 className="mt-5 font-heading text-[40px] font-extrabold leading-[1.04] tracking-[-0.045em] sm:text-[50px] md:text-[64px] lg:text-[72px]">
+                  <h1 className="mt-5 font-heading text-[40px] font-extrabold leading-[1.2] tracking-[-0.045em] sm:text-[50px] md:text-[64px] lg:text-[72px]">
                     Tôi không tin vào một công thức marketing cho mọi doanh nghiệp
                   </h1>
                   <p className="mt-7 max-w-4xl text-[19px] font-semibold leading-[1.65] text-brand-secondary md:text-[22px]">

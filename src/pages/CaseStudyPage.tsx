@@ -36,7 +36,7 @@ export default function CaseStudyPage() {
               <div className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-highlight md:text-[11px] md:tracking-[0.4em]">
                 CASE STUDIES
               </div>
-              <h1 className="mt-5 max-w-4xl font-heading text-[40px] font-extrabold leading-[1.04] tracking-[-0.04em] sm:text-[48px] md:text-[58px]">
+              <h1 className="mt-5 max-w-4xl font-heading text-[40px] font-extrabold leading-[1.2] tracking-[-0.04em] sm:text-[48px] md:text-[58px]">
                 Những hệ thống đã được xây từ bài toán thật
               </h1>
               <p className="mt-6 max-w-3xl text-[17px] font-medium leading-[1.75] text-brand-secondary md:text-[19px]">

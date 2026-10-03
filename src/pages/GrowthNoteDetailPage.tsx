@@ -789,7 +789,7 @@ export default function GrowthNoteDetailPage({ post }: GrowthNoteDetailPageProps
                     {post.readingTime}
                   </span>
                 </div>
-                <h1 className="mt-6 max-w-4xl font-heading text-[38px] font-extrabold leading-[1.08] tracking-[-0.045em] sm:text-[48px] md:text-[58px]">
+                <h1 className="mt-6 max-w-4xl font-heading text-[38px] font-extrabold leading-[1.2] tracking-[-0.045em] sm:text-[48px] md:text-[58px]">
                   {post.title}
                 </h1>
                 <p className="mt-7 max-w-3xl text-[18px] font-medium leading-[1.75] text-brand-secondary md:text-[20px]">
